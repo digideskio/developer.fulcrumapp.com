@@ -205,6 +205,12 @@ Example validation response if `access_key` is not included:
 }
 ```
 
+Each audio track consists of an array of track point arrays. Each track point array may include the following items in this order:
+```
+[timestamp (milliseconds since Unix Epoch), latitude, longitude, altitude, horizontal_accuracy, vertical_accuracy, course, speed, heading, inclination]
+```
+Each item should be a number or null and the only required items are timestamp, latitude, and longitude.
+
 ### Get the metadata for all audio files
 
 #### cURL
