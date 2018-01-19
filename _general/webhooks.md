@@ -43,7 +43,20 @@ You can write your own endpoint, or use an existing application.
 
 ### Write an Endpoint
 
-It's likely you will want to write your own endpoint to implement functionality custom to your organization. The details you'll need for this are discussed below.
+It's likely you will want to write your own endpoint to implement functionality custom to your organization. Below is a very simple example of a starter endpoint written in PHP.
+
+```php
+<?php
+  $input = file_get_contents('php://input'); # POST data from webhook
+  $payload = json_decode($input, true);
+
+  // do something with the webhook payload...
+  print $payload['type']; // record.create
+  print $payload['data']['form_values']['9272']; // 2018-01-19
+?>
+```
+
+The details you'll need for implementing your own endpoint are discussed below, but can be helpful to use a service such as [RequestBin](https://requestb.in/) for inspecting the actual webhook payloads sent by Fulcrum, while developing your endpoints.
 
 ### Use an Existing Endpoint
 
@@ -100,10 +113,6 @@ The event data is delivered as a JSON-encoded string in the POST request. This i
 ```
 
 See the above example payloads for details of what each event will look like.
-
-### Inspecting The Payload
-
-It can be helpful to use a service such as [RequestBin](https://requestb.in/) for inspecting the actual webhook payloads sent by Fulcrum, while developing your endpoints.
 
 ### Active/Inactive
 
