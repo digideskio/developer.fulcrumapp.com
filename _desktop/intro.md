@@ -55,12 +55,6 @@ Plugin installation directory: _\Users\username\\.fulcrum\plugins_
 
 Internal SQLite database: _\Users\username\AppData\Local\Fulcrum\data\fulcrum.db_
 
-### Internal SQLite database
-
-If you would like to change where the Internal SQLite database is stored, you can do so with a [symlink](https://en.wikipedia.org/wiki/Symbolic_link). Create a `data` directory in the location you'd like to store the SQLite db. And link it with the following command (for macOS):
-
-`ln -s ~/Desktop/data /Users/username/Library/Application\ Support/Fulcrum`
-
 ## Getting started
 
 After installing the core command line tools, you should authenticate with your Fulcrum account to setup your local database, sync your Organization's data down, install one of the [database plugins](/desktop/plugins/#database-plugins), and then setup auto-syncing.
@@ -73,6 +67,7 @@ After installing the core command line tools, you should authenticate with your 
 | macOS / Linux (prompt) | `fulcrum setup` |
 | macOS / Linux  | `fulcrum setup --email 'EMAIL' --password 'SECRET'` |
 | Windows | `.\fulcrum.cmd setup --email "EMAIL" --password "SECRET"` |
+| All | `fulcrum setup --token <token>` |
 
 ### Sync your Organization
 
@@ -94,16 +89,6 @@ By default, the PostgreSQL plugin expects a database named _fulcrumapp_ with the
 | - | - |
 | macOS / Linux  | `fulcrum install-plugin --name postgres`  |
 | Windows | `.\fulcrum.cmd install-plugin --name postgres` |
-
-### Setup the PostgreSQL database
-
-This will build and populate the system and app tables.
-
-{:.table.table-striped.event-table}
-| OS | Command |
-| - | - |
-| macOS / Linux  | `fulcrum postgres --org 'Organization Name' --pg-database 'fulcrumapp'`  |
-| Windows | `.\fulcrum.cmd postgres --org "Organization Name" --pg-database "fulcrumapp"` |
 
 ### Setup continuous sync
 
