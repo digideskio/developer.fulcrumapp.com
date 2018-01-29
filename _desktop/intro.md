@@ -57,7 +57,7 @@ Internal SQLite database: _\Users\username\AppData\Local\Fulcrum\data\fulcrum.db
 
 ## Getting started
 
-After installing the core command line tools, you should authenticate with your Fulcrum account to setup your local database, sync your Organization's data down, install one of the [database plugins](/desktop/plugins/#database-plugins), and then setup auto-syncing.
+After installing the core command line tools, you should authenticate with your Fulcrum account to setup your local database, sync your Organization's data down, install one of the [database plugins](/desktop/plugins/#database-plugins), and then setup auto-syncing. You can authenticate to Fulcrum via username/password or API token.
 
 ### Setup the local Fulcrum database
 
