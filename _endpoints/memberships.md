@@ -34,11 +34,6 @@ The memberships API provides access to your projects memberships. All methods re
 
 ## Examples
 
-form_id: 292a22c5-456a-4deb-a7d6-42ac409897b5
-membership_id from michael@sni.io: b3170114-8a7d-490a-95a0-15d42492b429
-membership_id from robbstark@harrenhall.com: 49ee5c1a-220f-4deb-8a9b-775706f66433
-
-
 Below is an example of using curl to fetch a list of memberships from a given project.
 ```bash
 curl -H "X-ApiToken: token" -H "Content-Type: application/json" https://api.fulcrumapp.com/api/v2/memberships.json?project_id=3751f03b-043d-48bf-a6cc-747ddd36b777
