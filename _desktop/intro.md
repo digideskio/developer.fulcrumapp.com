@@ -97,8 +97,8 @@ Continually sync the database to pull down changes from Fulcrum.
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum sync --org 'Organization Name' --forever`  |
-| Windows | `.\fulcrum.cmd sync --org "Organization Name" --forever` |
+| macOS / Linux  | `fulcrum sync --org 'Organization Name' --pg-user 'myuser' --pg-password 'mypassword' --forever`  |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name" --pg-user "myuser" --pg-password "mypassword"  --forever` |
 
 _Windows seems to prefer double quotes with command parameters._
 
