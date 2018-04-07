@@ -144,8 +144,8 @@ Watch and recompile all plugins.
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum build-plugins`  |
-| Windows | `.\fulcrum.cmd build-plugins` |
+| macOS / Linux  | `fulcrum watch-plugins`  |
+| Windows | `.\fulcrum.cmd watch-plugins` |
 
 ### query
 
