@@ -9,6 +9,7 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
   - "Properties": audio-properties
   - "Validations": validations
   - "Notes": notes
@@ -36,6 +37,22 @@ The Audio API gives you access to a record's audio files, including the GPS trac
 | GET | /api/v2/audio/**:id**/track.gpx | Fetch the GPS track for a single audio as GPX. |
 | GET | /api/v2/audio/**:id**/track.kml | Fetch the GPS track for a single audio as KML. |
 | POST | /api/v2/audio/upload | Upload a single audio recording (.m4a) or a single audio GPS track (.json). |
+
+## Query Parameters
+
+Available parameters to query the audio files in your account. All of the parameters may be used together to filter your audio files for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | The id of the form with which the audio file is associated. Leaving this blank will query against all of your audio file. |
+| newest_first | boolean | If present, audio files will be sorted by `updated_at` date.
+| page | integer | The page number requested. |
+| per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
+| processed | boolean | Audio file has been completely processed. |
+| record_id | string | The id of the record with which the audio file is associated. |
+| stored | boolean | Audio file has been completely stored. |
+| uploaded | boolean | Audio file has been completely uploaded. |
 
 ## Audio Properties
 
