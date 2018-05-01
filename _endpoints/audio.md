@@ -45,7 +45,7 @@ Available parameters to query the audio files in your account. All of the parame
 {:.table.table-striped}
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| form_id | string | The id of the form with which the audio file is associated. Leaving this blank will query against all of your audio file. |
+| form_id | string | The id of the form with which the audio file is associated. Leaving this blank will query against all of your audio files. |
 | newest_first | boolean | If present, audio files will be sorted by `updated_at` date.
 | page | integer | The page number requested. |
 | per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
