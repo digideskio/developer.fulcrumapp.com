@@ -1,9 +1,19 @@
-url: ""
+url: "http://localhost:4010"
 
 proofer:
-  check_html: true
-  disable_external: true
+  :check_html: true
+  :check_opengraph: true
+  :internal_domains:
+    - "http://localhost:4010"
+  :url_swap:
+    "http://localhost:4010/": "/"
+  :cache:
+    :timeframe: 24h
+  :parallel:
+    :in_processes: 3
+  :disable_external: true
 
 github:
   repository_nwo: "fulcrumapp/developer.fulcrumapp.com"
   owner_url: "https://github.com/fulcrumapp"
+  repository_url: "https://github.com/fulcrumapp/developer.fulcrumapp.com"
