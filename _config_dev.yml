@@ -1,7 +1,7 @@
 # Setup
 title: Fulcrum Developers
 name: Fulcrum Developers
-url: https://developer.fulcrumapp.com
+url: http://localhost:4010
 relative_permalinks: false
 port: 4010
 plugins:
