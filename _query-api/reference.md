@@ -169,6 +169,8 @@ The basic `SELECT * FROM tables;` query will return all of the tables available 
 | `media` | These tables help you join media with records. Each photo, video, and audio field will have its own associated table that can be used to connect the record data with the `photos`, `audio` and `videos` system tables. Each media field also has an array column on the record table containing the ID's, but these `media` tables let you use more conventional SQL joins to connect the data rather than more complex array operations to link multiple photos in a single photo to the `photos` table. |
 | `system` | Fulcrum system tables: audio, changesets, choice_lists, classification_sets, forms, memberships, photos, projects, roles, signatures, videos |
 
+*Note*: If a query returns `{"error":"relation \"organization_1234.form_123456_undefined_view\" does not exist"}` this is an error that can happen with longer form names. Postgres has a table name limitation of [63 characters](https://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS), so with queries containing form/repeatable names > 63 characters, you might see this and will either need to shorten the names or use the form ID *(see below)*.
+
 ## Form Tables
 
 Fulcrum form tables hold the records for each form in your account.
