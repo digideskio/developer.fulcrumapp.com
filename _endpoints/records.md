@@ -84,7 +84,7 @@ Records will still be ordered according to the `updated_at` column, even when fi
 | updated_by | string | no | yes | The name of user who last updated the record. |
 | updated_by_id | string | no | yes | The id of user who last updated the record. |
 | changeset_id | string | no | no | The id of the [changeset](/endpoints/changesets/) associated with the record. |
-| project_id | string | no | no | The id of the [project](http://www.fulcrumapp.com/help/projects/) tagged to the record. |
+| project_id | string | no | no | The id of the [project](http://help.fulcrumapp.com/web-app/what-are-projects) tagged to the record. |
 | assigned_to | string | no | yes | The name of the user the record is assigned to. |
 | assigned_to_id | string | no | no | The id of the user the record is assigned to (`user_id`). |
 | created_duration | number | no | no | The number of seconds spent creating the record. |
@@ -109,7 +109,7 @@ Records will still be ordered according to the `updated_at` column, even when fi
 | Date | string | `"2015"` |
 | Time | string | `"13:50"` |
 | Barcode | string | `"123456789"` |
-| Hyperlink | string | `"http://www.fulcrumapp.com"` |
+| Hyperlink | string | `"https://www.fulcrumapp.com"` |
 | Calculation | string | `"6"` |
 | Single Choice | object with the following keys: `choice_values` (array of selected options) `other values` (array, empty or with values) | `{"choice_values": ["Red"],"other_values": []}` |
 | Multiple Choice | object with the following keys: `choice_values` (array of selected options) `other values` (array, empty or with values) | `{"choice_values": ["Red","White"],"other_values": []}` |

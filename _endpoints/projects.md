@@ -16,7 +16,7 @@ menu:
   - "Examples": examples
 ---
 
-The Projects API gives you access to the [projects](http://www.fulcrumapp.com/help/projects/) within your Fulcrum account. Projects can be used to separate your data into different groups for access, filtering, and exporting purposes.
+The Projects API gives you access to the [projects](http://help.fulcrumapp.com/web-app/what-are-projects) within your Fulcrum account. Projects can be used to separate your data into different groups for access, filtering, and exporting purposes.
 
 ## Endpoints
 

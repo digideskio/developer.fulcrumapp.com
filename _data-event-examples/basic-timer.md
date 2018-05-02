@@ -12,7 +12,7 @@ tags:
 
 This example can be utilized in situations where survey details need to be timed and documented, such as wildlife observations or recording various occurrence durations.
 
-Please consider the [Record Auditing Duration](http://www.fulcrumapp.com/blog/august-2016-updates/) metrics which are now captured in your Fulcrum records - if those features may meet your needs for time capture.
+Please consider the [Record Auditing Duration]({{ site.url }}/blog/august-2016-updates/) metrics which are now captured in your Fulcrum records - if those features may meet your needs for time capture.
 
 The `SETTIMEOUT` function can also be used for similar situations, such as [alerting a user with a message](http://developer.fulcrumapp.com/data-events/reference/settimeout/) after a specified amount of time.
 

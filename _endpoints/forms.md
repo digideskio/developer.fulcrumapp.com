@@ -53,8 +53,8 @@ The Forms API gives you access to your form fields, or app schema.
 | auto_assign | boolean | no | no | Assigns records to the user who creates them. |
 | hidden_on_dashboard | boolean | no | no | Is the form visible in the mobile dashboard? |
 | geometry_required | boolean | no | no | Requiring the location will force a location to be saved with each record. |
-| projects_enabled | boolean | no | no | Are [projects](http://www.fulcrumapp.com/help/projects/) enabled for this form? |
-| assignment_enabled | boolean | no | no | Is [record assignment](http://www.fulcrumapp.com/help/record-assignment-for-task-queueing/) enabled for this form? |
+| projects_enabled | boolean | no | no | Are [projects](http://help.fulcrumapp.com/web-app/what-are-projects) enabled for this form? |
+| assignment_enabled | boolean | no | no | Is [record assignment](http://help.fulcrumapp.com/web-app/what-is-record-assignment) enabled for this form? |
 | geometry_types | array | no | no | Enables/disables record location. `['Point']` or `[]` |
 | script | string | no | no | Custom Data Events script. |
 | record_count | number | no | yes | The number of records in this form. |

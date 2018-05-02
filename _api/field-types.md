@@ -16,13 +16,13 @@ A section is a logical divider of the form. Sections may contains many form elem
 
 ## Classification Field
 
-[Classification sets](http://www.fulcrumapp.com/help/classification-sets/) let you predefine hierarchies and schemas for classifying data into a standard format from the field.
+[Classification sets]({{ site.url }}/help/classification-sets/) let you predefine hierarchies and schemas for classifying data into a standard format from the field.
 
 * `ClassificationField` elements *must* have a `classification_set_id` field that contains a **valid** `id` of an existing classification set object.
 
 ## Choice Field
 
-A ChoiceField is a form element to allow a list of selectable options. There are two ways to define the options of a ChoiceField. You can define the choices inline with the ChoiceField, or you can use [Choice Lists](/endpoints/choice-lists/) to define a set of choices that can be shared across multiple forms. Both methods of defining the choices are supported by the API. See the API documentation for [Choice Lists](/endpoints/choice-lists/) for information on how to manage Choice Lists.
+A ChoiceField is a form element to allow a list of selectable options. There are two ways to define the options of a ChoiceField. You can define the choices inline with the ChoiceField, or you can use [Choice Lists]({{ site.url }}/endpoints/choice-lists/) to define a set of choices that can be shared across multiple forms. Both methods of defining the choices are supported by the API. See the API documentation for [Choice Lists]({{ site.url }}/endpoints/choice-lists/) for information on how to manage Choice Lists.
 
 `ChoiceField` elements *must* have either:
 

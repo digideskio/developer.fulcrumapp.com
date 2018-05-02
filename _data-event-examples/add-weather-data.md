@@ -35,7 +35,7 @@ function getWeather() {
 ON('change-geometry', getWeather);
 ```
 
-If you only want to fetch weather when explicitly requested by the end user, you can listen for the `'click'` event for a hyperlink field. Just add a new [hyperlink field](http://www.fulcrumapp.com/help/hyperlink-fields/) to your app and give it a descriptive label, "Tap to Add Weather Data" for example. Leave the default url blank and set up your data event like so.
+If you only want to fetch weather when explicitly requested by the end user, you can listen for the `'click'` event for a hyperlink field. Just add a new [hyperlink field]({{ site.url }}/help/hyperlink-fields/) to your app and give it a descriptive label, "Tap to Add Weather Data" for example. Leave the default url blank and set up your data event like so.
 
 ```js
 // This assumes you've still got the getWeather function defined from the example above
