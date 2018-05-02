@@ -16,7 +16,7 @@ A section is a logical divider of the form. Sections may contains many form elem
 
 ## Classification Field
 
-[Classification sets]({{ site.url }}/help/classification-sets/) let you predefine hierarchies and schemas for classifying data into a standard format from the field.
+[Classification sets](http://help.fulcrumapp.com/field-types/how-do-classification-sets-work) let you predefine hierarchies and schemas for classifying data into a standard format from the field.
 
 * `ClassificationField` elements *must* have a `classification_set_id` field that contains a **valid** `id` of an existing classification set object.
 

@@ -9,7 +9,7 @@ tags:
   - carto
 ---
 
-This example demonstrates how to build a SQL statement to *create* or *update* records in [CARTO](https://carto.com/). When the Fulcrum record is saved, a POST request is sent to the [CARTO SQL API](https://carto.com/docs/carto-engine/sql-api/). While you can easily sync your Fulcrum app to CARTO via [Data Shares]({{ site.url }}/help/data-shares/) and [Synced Tables](https://carto.com/blog/synced-tables-create-real-time-maps-from-data-anywhere/), or write custom [webhooks](/general/webhooks/), this method instantly updates your CARTO table without having to wait for a scheduled CARTO sync or even a Fulcrum sync.
+This example demonstrates how to build a SQL statement to *create* or *update* records in [CARTO](https://carto.com/). When the Fulcrum record is saved, a POST request is sent to the [CARTO SQL API](https://carto.com/docs/carto-engine/sql-api/). While you can easily sync your Fulcrum app to CARTO via [Data Shares](http://help.fulcrumapp.com/data/what-are-data-shares) and [Synced Tables](https://carto.com/blog/synced-tables-create-real-time-maps-from-data-anywhere/), or write custom [webhooks]({{ site.url }}/general/webhooks/), this method instantly updates your CARTO table without having to wait for a scheduled CARTO sync or even a Fulcrum sync.
 
 ```js
 var username = 'fulcrum',

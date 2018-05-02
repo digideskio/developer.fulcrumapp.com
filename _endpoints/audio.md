@@ -87,7 +87,7 @@ The following properties must be included in order to create/update an audio obj
 | Property | Type | Description | Example |
 |----------|------|-------------|---------|
 | audio[access_key] | string | The id of the audio. | `"2d956eb0-bc2a-747f-fc56-1100936ce515"` |
-| audio[file] | multipart/form-data | The audio file. | See [example](#upload-a-new-audio) below. |
+| audio[file] | multipart/form-data | The audio file. | See [example](#upload-a-new-audio-file) below. |
 
 Example validation response if `access_key` is not included:
 
