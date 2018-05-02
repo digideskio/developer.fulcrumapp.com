@@ -10,7 +10,7 @@ tags:
   - wfs
 ---
 
-This example demonstrates how to build an [OGC Filter](http://docs.geoserver.org/latest/en/user/filter/filter_reference.html#filter-fe-reference) to query a GeoServer WFS instance and use the results in a choice list. For this particular example, we want to list all the streets within 100 meters of our current location so we can do some field addressing without having to enter the street names. [MassGIS](https://wiki.state.ma.us/confluence/display/massgis/Home) maintains a GeoServer instance which includes roads from the Massachusetts Department of Transportation (MassDOT). We will be querying the `massgis:GISDATA.EOTROADS_ARC` layer, parsing the results as GeoJSON, and adding the `STREETNAME` property to a choice list.
+This example demonstrates how to build an [OGC Filter](http://docs.geoserver.org/latest/en/user/filter/filter_reference.html#filter-fe-reference) to query a GeoServer WFS instance and use the results in a choice list. For this particular example, we want to list all the streets within 100 meters of our current location so we can do some field addressing without having to enter the street names. [MassGIS](https://www.mass.gov/orgs/massgis-bureau-of-geographic-information) maintains a GeoServer instance which includes roads from the Massachusetts Department of Transportation (MassDOT). We will be querying the `massgis:GISDATA.EOTROADS_ARC` layer, parsing the results as GeoJSON, and adding the `STREETNAME` property to a choice list.
 
 <img src="../media/geoserver-query.gif" alt="GeoServer Query" style="float: right; margin-left: 40px;" />
 

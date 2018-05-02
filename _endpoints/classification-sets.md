@@ -16,7 +16,7 @@ menu:
   - "Examples": examples
 ---
 
-The Classification Sets API gives you access to the [classification sets](http://www.fulcrumapp.com/help/classification-sets/) within your Fulcrum account. Classification sets are hierarchical lists of descriptors, allowing nested sets of options, which can be shared between multiple apps.
+The Classification Sets API gives you access to the [classification sets](http://help.fulcrumapp.com/field-types/how-do-classification-sets-work) within your Fulcrum account. Classification sets are hierarchical lists of descriptors, allowing nested sets of options, which can be shared between multiple apps.
 
 ## Endpoints
 

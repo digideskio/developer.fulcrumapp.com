@@ -108,7 +108,7 @@ fulcrumapp://edit-record?record_id=11fb2a54-5158-4848-8695-c405c54525e4&status=i
 
 Several core Android apps, including Gmail and Messenger do not support custom schemes and will not correctly link to Fulcrum if you try to use the following `<a href="fulcrumapp://new-record?form_id=123-xyz">Create new record</a>`. We have setup a dedicated http page to help overcome this issue, by providing a web link, which opens the browser and redirects to open the Fulcrum app. If you are dealing with this issue, try the following:
 
-* `<a href="http://www.fulcrumapp.com/action/#new-record?form_id=123-xyz">Create new record</a>` for new records
-* `<a href="http://www.fulcrumapp.com/action/#edit-record?form_id=123-xyz&record_id=xyz-123">Edit record</a>` for existing edits
+* `<a href="https://www.fulcrumapp.com/action/#new-record?form_id=123-xyz">Create new record</a>` for new records
+* `<a href="https://www.fulcrumapp.com/action/#edit-record?form_id=123-xyz&record_id=xyz-123">Edit record</a>` for existing edits
 
 This solution should work for both Android and iOS.

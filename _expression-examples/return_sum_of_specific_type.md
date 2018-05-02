@@ -6,7 +6,7 @@ description: "Use this in a calculation field to return the sum of a specific ty
 category: section
 ---
 
-Designed to be used in conjunction with a [repeatable section](http://www.fulcrumapp.com/help/repeatable-sections/). This example can be used to return the sum of values for a specific variable that is captured in a choice field inside a repeatable section.
+Designed to be used in conjunction with a [repeatable section](http://help.fulcrumapp.com/field-types/what-are-repeatable-sections). This example can be used to return the sum of values for a specific variable that is captured in a choice field inside a repeatable section.
 
 In the example code below the `cost_field` captures the cost while the `item_type_field` is used to capture the type of item that the cost is associated with in a child record. The code then loops through comparing the two arrays and returns a sum of all values in the `cost_field` where the `item_type_field` is equal to `Item A`.
 

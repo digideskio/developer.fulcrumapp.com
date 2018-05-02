@@ -68,7 +68,7 @@ Example validation response if `url` is not included:
 
 ## Notes
 
-* Your [plan must enable webhooks](http://www.fulcrumapp.com/guides/webhooks/webhooks-plans/) and you must also have an account with the [right role/permission](http://www.fulcrumapp.com/guides/webhooks/webhooks-roles-and-permissions/) to manage webhooks.
+* Your [plan must enable webhooks](http://help.fulcrumapp.com/setting-up-webhooks/how-to-enable-webhooks) and you must also have an account with the [right role/permission](http://help.fulcrumapp.com/setting-up-webhooks/roles-and-permissions) to manage webhooks.
 
 ## Examples
 

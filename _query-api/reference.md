@@ -191,9 +191,9 @@ Every Fulcrum form contains standard system columns, in addition to your custom 
 | _record_id | string | The ID of the [record](/endpoints/records/). |
 | _project_id | string | The ID of the [project](/endpoints/projects/). Can be joined to the `project_id` column in the `projects` table. |
 | _assigned_to_id | string | The ID of the [member](/endpoints/users/) the record is assigned to.  Can be joined to the `user_id` column in the `memberships` table. |
-| _status | string | The record [status](http://www.fulcrumapp.com/help/status-fields/). |
-| _version | number | The record [version](http://www.fulcrumapp.com/help/version-history/). |
-| _title | string | The record [title](http://www.fulcrumapp.com/help/title-fields/). |
+| _status | string | The record [status](http://help.fulcrumapp.com/field-types/what-is-a-status-field). |
+| _version | number | The record [version](http://help.fulcrumapp.com/web-app/how-does-version-history-work). |
+| _title | string | The record [title](http://help.fulcrumapp.com/field-types/what-is-a-title-field). |
 | _created_at | date | The timestamp when the record was created on the device. |
 | _updated_at | date | The timestamp when the record was updated on the device. |
 | _server_created_at | date | The timestamp when the record was created on the server. |
