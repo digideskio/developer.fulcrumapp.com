@@ -2,7 +2,7 @@
 layout: default
 section: data_events
 title: "Phone number validation"
-description: "Use Twilio or numverify API's to validate phone numbers."
+description: "Use the Twilio API to validate a phone number."
 category: section
 tags:
   - request
@@ -66,38 +66,4 @@ ON('click', 'verify_with_twilio', function(event) {
         }
     });
 });
-```
-
-[numverify](https://numverify.com/) is another service that offers a cost-effective API (validate 250 phone numbers per month for free). It offers a REST API supporting 232 countries. Paid customers may establish a [secure connection](https://numverify.com/documentation#https). The example below demonstrates a Data Event which returns a simple: valid = `true`/`false` value.
-
-```js
-//You may want to consider using regex validation for phone_number in a text field but a numeric field works too.
-function validateNumber() {
-    apiKey = 'your_api_key';
-    verifyUrl = 'http://apilayer.net/api/validate?access_key=' + apiKey + '&number=' + $phone_number + '&format=1';
-
-    // use cors/https proxy for web requests.
-    var mobile = ['iOS', 'Android'];
-    if (mobile.indexOf(PLATFORM()) === -1) {
-        verifyUrl = 'https://crossorigin.me/' + verifyUrl;
-    }
-
-    options = {
-        url: verifyUrl
-    };
-
-    REQUEST(options, function(error, response, body) {
-        if (error) {
-            ALERT('Error with request: ' + error);
-        } else {
-            var data = JSON.parse(body);
-            //valid_via_numverify is a read-only text field which begins as hidden. We unhide it with SETHIDDEN when data is returned.
-            SETVALUE('valid_via_numverify', data.valid);
-            SETHIDDEN('valid_via_numverify', false);
-        }
-    });
-
-}
-//verify_with_numverify is a hyperlink field.
-ON('click', 'verify_with_numverify', validateNumber);
 ```
