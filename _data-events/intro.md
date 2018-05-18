@@ -10,7 +10,7 @@ menu:
   - "Field Events": field-events
   - "Repeatable Events": repeatable-events
   - "Media Events": media-events
-  - "Request Calls" : request-calls
+  - "Request Calls": request-calls
 ---
 
 Data Events allow users to perform ​_actions_​ on the mobile device when certain ​_events_​ are triggered. Actions include custom alerts and validation messages, setting field values, choices, labels, descriptions, requirement & visibility settings, HTTP requests and more. Event triggers include record loading, editing, validating, saving, value changing, and more. This enables listening for record changes, programmatically changing values (including status, project, and geometry), as well as building dynamic hyperlinks, writing custom quality assurance logic and much more!
@@ -291,15 +291,15 @@ Tips: You should use the _data name_ of the field that you want to populate. You
 
 ```js
 function doThis() {
-  options = {
+  var options = {
     url: "https://theURLyouneed.com"
   };
 
   REQUEST(options, function(error, response, body) {
     if (error) {
-      ALERT('Error with request: ' + error);
+      ALERT('Error with request: ' + INSPECT(error));
     } else {
-      data = JSON.parse(body);
+      var data = JSON.parse(body);
       SETVALUE('field_you_want_to_populate', data.rows[0].value);
     }
   });

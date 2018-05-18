@@ -48,7 +48,7 @@ ON('change-geometry', function(event) {
 
   REQUEST(options, function(error, response, body) {
     if (error) {
-      ALERT('Error with request: ' + error);
+      ALERT('Error with request: ' + INSPECT(error));
     } else {
       var data = JSON.parse(body);
 
