@@ -23,17 +23,17 @@ The SETCHOICEFILTER function allows for dynamic filtering of the choice options 
 
 ```js
 // Filters the choices in the weather summary field to those that contain 'cat'
-SETCHOICEFILTER('weather_summary', 'cat')
+SETCHOICEFILTER('weather_summary', 'cat');
 ```
 
 
 ```js
 // Filters the choices in the weather summary field to those that contain 'cat' or 'dog'
-SETCHOICEFILTER('weather_summary', ['cat', 'dog'])
+SETCHOICEFILTER('weather_summary', ['cat', 'dog']);
 ```
 
 
 ```js
 // Unsets any filter previously set by SETCHOICEFILTER and applies no filter
-SETCHOICEFILTER('weather_summary', null)
+SETCHOICEFILTER('weather_summary', null);
 ```

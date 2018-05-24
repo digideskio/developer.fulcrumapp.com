@@ -20,7 +20,7 @@ ALERT displays a message to the user. You can provide both the title and message
 ### Examples
 
 ```js
-ALERT('Warning!', 'A depth of 98 feet is high. Are you sure?')
+ALERT('Warning!', 'A depth of 98 feet is high. Are you sure?');
 
 // Displays an alert that looks like
 // +-------------------------------------------+

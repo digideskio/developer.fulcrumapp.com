@@ -26,10 +26,10 @@ The `choices` parameter can be in 3 possible formats. The first format is provid
 ### Examples
 
 ```js
-choices = ['Rain', 'Hail', 'Snow', 'Graupel']
+choices = ['Rain', 'Hail', 'Snow', 'Graupel'];
 
 // Sets the available choices of the weather summary field to an array of values
-SETCHOICES('weather_summary', choices)
+SETCHOICES('weather_summary', choices);
 ```
 
 
@@ -37,10 +37,10 @@ SETCHOICES('weather_summary', choices)
 choices = [
   ['Light Rain', 'light_rain'],
   ['Heavy Rain', 'heavy_rain']
-]
+];
 
 // Sets the available choices of the weather summary field to an array of labels and values in [<label>, <value>] order
-SETCHOICES('weather_summary', choices)
+SETCHOICES('weather_summary', choices);
 ```
 
 
@@ -48,14 +48,14 @@ SETCHOICES('weather_summary', choices)
 choices = [
   { label: 'Light Rain', value: 'light_rain' },
   { label: 'Heavy Rain', value: 'heavy_rain' }
-]
+];
 
 // Sets the available choices of the weather summary field to an array of labels and values in an object containing "label" and "value" keys
-SETCHOICES('weather_summary', choices)
+SETCHOICES('weather_summary', choices);
 ```
 
 
 ```js
 // Unsets any override previously set by SETCHOICES and uses the original setting from the form schema
-SETCHOICES('weather_summary', null)
+SETCHOICES('weather_summary', null);
 ```

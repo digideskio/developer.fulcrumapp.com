@@ -168,6 +168,10 @@ Returns the double factorial of a number.
 
 Returns the boolean value `false`.
 
+### [FIELD](/expressions/reference/field/)
+
+Returns definition object for a specified field
+
 ### [FIELDTYPE](/expressions/reference/fieldtype/)
 
 Returns the field type of a field by its data name
@@ -191,6 +195,10 @@ Flatten nested arrays into a flat array
 ### [FLOOR](/expressions/reference/floor/)
 
 Rounds a number down to the nearest integer multiple of specified significance.
+
+### [FORM](/expressions/reference/form/)
+
+Returns the form definition object
 
 ### [FORMAT](/expressions/reference/format/)
 
@@ -559,6 +567,10 @@ Returns the difference between 2 time fields
 ### [TIMESTAMP](/expressions/reference/timestamp/)
 
 Returns a formatted timestamp
+
+### [TIMEZONE](/expressions/reference/timezone/)
+
+Returns the timezone according to the current device settings
 
 ### [TRIM](/expressions/reference/trim/)
 

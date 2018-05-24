@@ -15,5 +15,5 @@ permalink: /data-events/reference/setproject/
 
 ```js
 // Sets the project of a record
-SETPROJECT('Bells Crossing Phase 3')
+SETPROJECT('Bells Crossing Phase 3');
 ```

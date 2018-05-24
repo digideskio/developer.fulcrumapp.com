@@ -14,7 +14,7 @@ permalink: /data-events/reference/setstatusreadonly/
 ### Examples
 
 ```js
-SETSTATUSREADONLY(true)
+SETSTATUSREADONLY(true);
 
 // Sets the status field to read only, not editable by the user
 ```

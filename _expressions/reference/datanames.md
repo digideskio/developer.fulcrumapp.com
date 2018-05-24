@@ -20,12 +20,12 @@ Array
 ```js
 DATANAMES()
 
-// returns ["name","items","cost"]
+// returns ["name","items","cost","choice_value","child_items","child_item_cost","choice_field"]
 ```
 
 
 ```js
 DATANAMES('Repeatable')
 
-// returns ["items"]
+// returns ["items","child_items"]
 ```

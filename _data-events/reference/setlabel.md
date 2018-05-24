@@ -17,11 +17,11 @@ permalink: /data-events/reference/setlabel/
 
 ```js
 // Sets the field's label to 'Weather Report'
-SETLABEL('weather_summary', 'Weather Report')
+SETLABEL('weather_summary', 'Weather Report');
 ```
 
 
 ```js
 // Unsets any override previously set by SETLABEL and uses the original setting from the form schema
-SETLABEL('weather_summary', null)
+SETLABEL('weather_summary', null);
 ```

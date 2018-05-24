@@ -14,7 +14,7 @@ permalink: /data-events/reference/setstatushidden/
 ### Examples
 
 ```js
-SETSTATUSHIDDEN(true)
+SETSTATUSHIDDEN(true);
 
 // Sets the status field to be hidden
 ```

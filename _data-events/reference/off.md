@@ -16,14 +16,14 @@ permalink: /data-events/reference/off/
 ### Examples
 
 ```js
-OFF('validate-record', callback)
+OFF('validate-record', callback);
 
 // Detaches an event handler from the validate-record event
 ```
 
 
 ```js
-OFF('validate-record')
+OFF('validate-record');
 
 // Detaches all event handlers listening to the 'validate-record' event
 ```

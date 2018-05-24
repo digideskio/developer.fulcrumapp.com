@@ -16,7 +16,7 @@ permalink: /data-events/reference/setdescription/
 ### Examples
 
 ```js
-SETDESCRIPTION('weather_summary', 'Could not automatically fetch weather data. Briefly describe the current weather.')
+SETDESCRIPTION('weather_summary', 'Could not automatically fetch weather data. Briefly describe the current weather.');
 
 // Sets the description of a weather summary field
 ```

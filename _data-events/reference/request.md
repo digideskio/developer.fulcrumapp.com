@@ -44,18 +44,18 @@ To work in the web browser, URLs fetched using REQUEST *require* HTTPS & [CORS](
 ON('change-geometry', function(event) {
   var options = {
     url: 'https://nominatim.openstreetmap.org/search/' + LATITUDE() + ',' + LONGITUDE() + '?format=json&polygon=1&addressdetails=1'
-  }
+  };
 
   REQUEST(options, function(error, response, body) {
     if (error) {
-      ALERT('Error with request: ' + error)
+      ALERT('Error with request: ' + error);
     } else {
-      var data = JSON.parse(body)
+      var data = JSON.parse(body);
 
       if (data.length) {
-        SETVALUE('place_name', data[0].display_name)
+        SETVALUE('place_name', data[0].display_name);
       }
     }
-  })
+  });
 });
 ```

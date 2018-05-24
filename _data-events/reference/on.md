@@ -22,40 +22,40 @@ The ON function is the starting point for most data event scripts. It wires up a
 ```js
 var callback = function () {
   if (!(LATITUDE() >= 40 && LATITUDE() <= 41)) {
-    INVALID('Latitude must be between 40 and 41.')
+    INVALID('Latitude must be between 40 and 41.');
   }
-}
+};
 
 // Listens for 'save-record' events and stops the record from being saved unless it's within a latitude range
-ON('validate-record', callback)
+ON('validate-record', callback);
 ```
 
 
 ```js
 var callback = function () {
   // Do something with the new $weather_summary values
-}
+};
 
 // Listens for changes to the weather summary field and executes callback
-ON('change', 'weather_summary', callback)
+ON('change', 'weather_summary', callback);
 ```
 
 
 ```js
 var callback = function () {
   // Do something with the location via LATITUDE() AND LONGITUDE() values
-}
+};
 
 // Listens for changes to a record's geometry (location) and executes callback
-ON('change-geometry', callback)
+ON('change-geometry', callback);
 ```
 
 
 ```js
 var callback = function () {
   // Do something with the repeatable location via LATITUDE() AND LONGITUDE() values
-}
+};
 
 // Listens for changes to a repeatable item's geometry and executes callback
-ON('change-geometry', 'repeatable_item', callback)
+ON('change-geometry', 'repeatable_item', callback);
 ```

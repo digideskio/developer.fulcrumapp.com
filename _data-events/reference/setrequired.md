@@ -17,17 +17,17 @@ permalink: /data-events/reference/setrequired/
 
 ```js
 // Sets the weather summary field as required
-SETREQUIRED('weather_summary', true)
+SETREQUIRED('weather_summary', true);
 ```
 
 
 ```js
 // Sets the weather summary field as not required
-SETREQUIRED('weather_summary', false)
+SETREQUIRED('weather_summary', false);
 ```
 
 
 ```js
 // Unsets any override previously set by SETREQUIRED and uses the original setting from the form schema
-SETREQUIRED('weather_summary', null)
+SETREQUIRED('weather_summary', null);
 ```

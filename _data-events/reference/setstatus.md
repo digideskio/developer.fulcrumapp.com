@@ -9,11 +9,11 @@ permalink: /data-events/reference/setstatus/
 
 ### Parameters
 
-`status` String (__required__) - The status value for the record
+`status` String (__required__) - The status value for the record. Must be a valid status option!
 
 ### Examples
 
 ```js
 // Sets the status of a record
-SETSTATUS('inspection_pending')
+SETSTATUS('inspection_pending');
 ```

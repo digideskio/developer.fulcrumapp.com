@@ -21,17 +21,17 @@ The SETHIDDEN function hides a form field. It can be used to add custom conditio
 
 ```js
 // Hides the weather summary field
-SETHIDDEN('weather_summary', true)
+SETHIDDEN('weather_summary', true);
 ```
 
 
 ```js
 // Shows the weather summary field
-SETHIDDEN('weather_summary', false)
+SETHIDDEN('weather_summary', false);
 ```
 
 
 ```js
 // Unsets any override previously set by SETHIDDEN and uses the original setting from the form schema
-SETHIDDEN('weather_summary', null)
+SETHIDDEN('weather_summary', null);
 ```

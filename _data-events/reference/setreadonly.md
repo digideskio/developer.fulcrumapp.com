@@ -16,21 +16,21 @@ permalink: /data-events/reference/setreadonly/
 ### Examples
 
 ```js
-SETREADONLY('weather_summary', true)
+SETREADONLY('weather_summary', true);
 
 // Sets the field to read only, not editable by the user
 ```
 
 
 ```js
-SETREADONLY('weather_summary', false)
+SETREADONLY('weather_summary', false);
 
 // Sets the field to be active, editable by the user
 ```
 
 
 ```js
-SETREADONLY('weather_summary', null)
+SETREADONLY('weather_summary', null);
 
 // Unsets any override previously set by SETREADONLY and uses the original setting from the form schema
 ```

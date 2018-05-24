@@ -24,3 +24,10 @@ REPEATABLEVALUES($repeatable_field, 'cost')
 
 // returns [1,2,3]
 ```
+
+
+```js
+REPEATABLEVALUES($repeatable_field, 'choice_value').map(CHOICEVALUE)
+
+// returns ["widget","spinner","gizmo"]
+```
