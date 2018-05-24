@@ -169,6 +169,8 @@ The basic `SELECT * FROM tables;` query will return all of the tables available 
 | `media` | These tables help you join media with records. Each photo, video, and audio field will have its own associated table that can be used to connect the record data with the `photos`, `audio` and `videos` system tables. Each media field also has an array column on the record table containing the ID's, but these `media` tables let you use more conventional SQL joins to connect the data rather than more complex array operations to link multiple photos in a single photo to the `photos` table. |
 | `system` | Fulcrum system tables: audio, changesets, choice_lists, classification_sets, forms, memberships, photos, projects, roles, signatures, videos |
 
+*Note*: If a query returns `{"error":"relation \"organization_1234.form_123456_undefined_view\" does not exist"}` this is an error that can happen with longer form names. Postgres has a table name limitation of [63 characters](https://www.postgresql.org/docs/current/static/sql-syntax-lexical.html#SQL-SYNTAX-IDENTIFIERS), so with queries containing form/repeatable names > 63 characters, you might see this and will either need to shorten the names or use the form ID *(see below)*.
+
 ## Form Tables
 
 Fulcrum form tables hold the records for each form in your account.
@@ -191,9 +193,9 @@ Every Fulcrum form contains standard system columns, in addition to your custom 
 | _record_id | string | The ID of the [record](/endpoints/records/). |
 | _project_id | string | The ID of the [project](/endpoints/projects/). Can be joined to the `project_id` column in the `projects` table. |
 | _assigned_to_id | string | The ID of the [member](/endpoints/users/) the record is assigned to.  Can be joined to the `user_id` column in the `memberships` table. |
-| _status | string | The record [status](http://www.fulcrumapp.com/help/status-fields/). |
-| _version | number | The record [version](http://www.fulcrumapp.com/help/version-history/). |
-| _title | string | The record [title](http://www.fulcrumapp.com/help/title-fields/). |
+| _status | string | The record [status](http://help.fulcrumapp.com/field-types/what-is-a-status-field). |
+| _version | number | The record [version](http://help.fulcrumapp.com/web-app/how-does-version-history-work). |
+| _title | string | The record [title](http://help.fulcrumapp.com/field-types/what-is-a-title-field). |
 | _created_at | date | The timestamp when the record was created on the device. |
 | _updated_at | date | The timestamp when the record was updated on the device. |
 | _server_created_at | date | The timestamp when the record was created on the server. |

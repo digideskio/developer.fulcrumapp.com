@@ -9,6 +9,7 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
   - "Properties": audio-properties
   - "Validations": validations
   - "Notes": notes
@@ -36,6 +37,22 @@ The Audio API gives you access to a record's audio files, including the GPS trac
 | GET | /api/v2/audio/**:id**/track.gpx | Fetch the GPS track for a single audio as GPX. |
 | GET | /api/v2/audio/**:id**/track.kml | Fetch the GPS track for a single audio as KML. |
 | POST | /api/v2/audio/upload | Upload a single audio recording (.m4a) or a single audio GPS track (.json). |
+
+## Query Parameters
+
+Available parameters to query the audio files in your account. All of the parameters may be used together to filter your audio files for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | The id of the form with which the audio file is associated. Leaving this blank will query against all of your audio files. |
+| newest_first | boolean | If present, audio files will be sorted by `updated_at` date.
+| page | integer | The page number requested. |
+| per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
+| processed | boolean | Audio file has been completely processed. |
+| record_id | string | The id of the record with which the audio file is associated. |
+| stored | boolean | Audio file has been completely stored. |
+| uploaded | boolean | Audio file has been completely uploaded. |
 
 ## Audio Properties
 
@@ -70,7 +87,7 @@ The following properties must be included in order to create/update an audio obj
 | Property | Type | Description | Example |
 |----------|------|-------------|---------|
 | audio[access_key] | string | The id of the audio. | `"2d956eb0-bc2a-747f-fc56-1100936ce515"` |
-| audio[file] | multipart/form-data | The audio file. | See [example](#upload-a-new-audio) below. |
+| audio[file] | multipart/form-data | The audio file. | See [example](#upload-a-new-audio-file) below. |
 
 Example validation response if `access_key` is not included:
 
@@ -204,6 +221,12 @@ Example validation response if `access_key` is not included:
   }]
 }
 ```
+
+Each audio track consists of an array of track point arrays. Each track point array may include the following items in this order:
+```
+[timestamp (milliseconds since Unix Epoch), latitude, longitude, altitude, horizontal_accuracy, vertical_accuracy, course, speed, heading, inclination]
+```
+Each item should be a number or null and the only required items are timestamp, latitude, and longitude.
 
 ### Get the metadata for all audio files
 

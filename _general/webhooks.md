@@ -9,7 +9,7 @@ category: section
 
 ## Getting Ready
 
-We assume you've read the general [webhooks overview](http://www.fulcrumapp.com/guides/webhooks/webhooks-for-push-notifications/), and will build on top of that knowledge here.
+We assume you've read the general [webhooks overview](http://help.fulcrumapp.com/setting-up-webhooks/webhooks-for-push-notifications), and will build on top of that knowledge here.
 
 ## Introduction
 
@@ -21,19 +21,19 @@ This is only a single use case. One could build webhook endpoints for other uses
 
 ## Authorization
 
-Your [plan must enable webhooks](http://www.fulcrumapp.com/guides/webhooks/webhooks-plans/). You must also have an account with the [right role/permission](http://www.fulcrumapp.com/guides/webhooks/webhooks-roles-and-permissions/) to manage webhooks.
+Your [plan must enable webhooks](http://help.fulcrumapp.com/setting-up-webhooks/how-to-enable-webhooks). You must also have an account with the [right role/permission](http://help.fulcrumapp.com/setting-up-webhooks/roles-and-permissions) to manage webhooks.
 
 Now that you know your plan enables webhooks, and you have the right role/permission, you can use your API token to manage webhooks through the API.
 
 **Note:** Accessing the webhooks API without a valid API token will result in a `401 Unauthorized` error. Using an API token without the proper subscription or role/permission will result in a `403 Forbidden` error.
 
-See [Developers Authentication](/api/intro/#authentication) on how to use this API token to access the API.
+See [Developers Authentication]({{ site.url }}/api/intro/#authentication) on how to use this API token to access the API.
 
 ## Manage Webhooks In Fulcrum
 
-Webhooks can be managed programmatically through the [Webhook API](/endpoints/webhooks/).
+Webhooks can be managed programmatically through the [Webhook API]({{ site.url }}/endpoints/webhooks/).
 
-One can also manage webhooks through [the Fulcrum site](http://www.fulcrumapp.com/guides/webhooks/webhooks-getting-started/).
+One can also manage webhooks through [the Fulcrum site](http://help.fulcrumapp.com/setting-up-webhooks/getting-started-with-webhooks).
 
 ## Choose an Endpoint
 
@@ -43,11 +43,24 @@ You can write your own endpoint, or use an existing application.
 
 ### Write an Endpoint
 
-It's likely you will want to write your own endpoint to implement functionality custom to your organization. The details you'll need for this are discussed below.
+It's likely you will want to write your own endpoint to implement functionality custom to your organization. Below is a very simple example of a starter endpoint written in PHP.
+
+```php
+<?php
+  $input = file_get_contents('php://input'); # POST data from webhook
+  $payload = json_decode($input, true);
+
+  // do something with the webhook payload...
+  print $payload['type']; // record.create
+  print $payload['data']['form_values']['9272']; // 2018-01-19
+?>
+```
+
+The details you'll need for implementing your own endpoint are discussed below, but can be helpful to use a service such as [RequestBin](https://requestb.in/) for inspecting the actual webhook payloads sent by Fulcrum, while developing your endpoints.
 
 ### Use an Existing Endpoint
 
-In the process of adding the webhooks functionality to Fulcrum, we built several applications that are webhook endpoints. You can refer to the list of guides and applications on our [Getting Started](http://www.fulcrumapp.com/guides/webhooks/webhooks-getting-started/) page.
+In the process of adding the webhooks functionality to Fulcrum, we built several applications that are webhook endpoints. You can refer to the list of guides and applications on our [Getting Started](http://help.fulcrumapp.com/setting-up-webhooks/getting-started-with-webhooks) page.
 
 ## Details
 
@@ -100,10 +113,6 @@ The event data is delivered as a JSON-encoded string in the POST request. This i
 ```
 
 See the above example payloads for details of what each event will look like.
-
-### Inspecting The Payload
-
-It can be helpful to use a service such as [RequestBin](https://requestb.in/) for inspecting the actual webhook payloads sent by Fulcrum, while developing your endpoints.
 
 ### Active/Inactive
 

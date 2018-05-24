@@ -9,6 +9,7 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
   - "Properties": signature-properties
   - "Validations": validations
   - "Notes": notes
@@ -28,6 +29,22 @@ The Signatures API gives you access to a record's signatures. In order to upload
 | GET | /api/v2/signatures/**:id**/thumbnail.json | Fetch the thumbnail version metadata for a single signature. |
 | GET | /api/v2/signatures/**:id**/thumbnail.png | Fetch the thumbnail version image for a single signature. |
 | POST | /api/v2/signatures.json | Upload a single signature. |
+
+## Query Parameters
+
+Available parameters to query the signatures in your account. All of the parameters may be used together to filter your signatures for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | The id of the form with which the signature is associated. Leaving this blank will query against all of your signatures. |
+| newest_first | boolean | If present, signatures will be sorted by `updated_at` date.
+| page | integer | The page number requested. |
+| per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
+| processed | boolean | Signature has been completely processed. |
+| record_id | string | The id of the record with which the signature is associated. |
+| stored | boolean | Signature has been completely stored. |
+| uploaded | boolean | Signature has been completely uploaded. |
 
 ## Signature Properties
 

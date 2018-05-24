@@ -44,4 +44,4 @@ Available parameters to query the objects in your account. All of the parameters
 
 * The Query API is read-only and _cannot modify data_ in your account.
 * You can use the Query API in conjunction with the [Records API](/endpoints/records/) to make updates to specific records by fetching the IDs of the records you want to PUT/DELETE.
-* Be careful sharing queries that expose your API token. Even though the Query API is read-only, if a token with write privileges is used, your data could still be compromised. Consider creating a [custom role](http://www.fulcrumapp.com/help/creating-custom-roles/) with restricted permissions (uncheck all boxes for read-only).
+* Be careful sharing queries that expose your API token. Even though the Query API is read-only, if a token with write privileges is used, your data could still be compromised. Consider creating a [custom role](http://help.fulcrumapp.com/user-management/how-can-i-create-custom-roles-with-specific-access-rights) with restricted permissions (uncheck all boxes for read-only).

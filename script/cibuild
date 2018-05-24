@@ -1,9 +1,20 @@
 #!/bin/sh
 
-set -ex
+set -e
 
-echo "Checking site..."
+title () {
+  echo ""
+  echo "-------------------------------"
+  echo $1
+  echo "-------------------------------"
+  echo ""
+}
+
+title "Checking site..."
 bundle exec rake test
 
-echo "Cleaning up..."
+title "checking DNS"
+bundle exec github-pages health-check
+
+title "Cleaning up..."
 rm -Rf _site

@@ -26,17 +26,20 @@ search: true
 
 ## Commands
 
+All command line arguments are also configurable via environment variables, prefixed with `FULCRUM_`. e.g. setting `--home-path` from an environment variable using `FULCRUM_HOME_PATH`. Explicit CLI arguments win. e.g. `fulcrum setup --home-path <path>` (to set the file system location for data, config, plugins, etc.); required for `setup`, `sync`, and `install-plugin` if not set as an environment variable.
+
 ### setup
 
 Setup the local Fulcrum database.
 
-Note: `setup` can be run interactively (via prompts, without passing email/password as parameters) on Linux/macOS.
+Note: `setup` by default is run interactively on Linux/macOS, via prompts for email/password. Windows requires passing email/password parameters.
 
 {:.table.table-striped.event-table}
 | Option | Description | Required | Default |
 | - | - | - | - |
-| `--email` | email associated with your Fulcrum account | true | na|
-| `--password` | password for your Fulcrum account | true | na |
+| `--email` | email associated with your Fulcrum account | true | true|
+| `--password` | password for your Fulcrum account | true | true |
+| `--token <token>` | skip email/password and use an API token | false | false |
 
 {:.table.table-striped.event-table}
 | OS | Command |
@@ -54,6 +57,11 @@ Sync an organization to the local database. Defaults to a one-time sync, but can
 | `--org` | organization name | true | na|
 | `--forever` | keep the sync running forever | false | false |
 | `--clean` | start a clean sync, all data will be deleted before starting | false | false |
+| `--after-sync-command <command>` | run an arbitrary command after each sync | false | false |
+| `--no-progress` | disable progress logs, automatically disabled if stdout isn't a tty | false | false |
+| `--simple-output` | replace emoji-based status indicators with text-based | false | false |
+| `--no-colors` | disable console colors, automatically disabled for dumb terminals | false | false |
+| `--form <id>` | filter by form ID, use multiple `--form` params for multiple forms | false | false |
 
 {:.table.table-striped.event-table}
 | OS | Command |
@@ -136,8 +144,8 @@ Watch and recompile all plugins.
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum build-plugins`  |
-| Windows | `.\fulcrum.cmd build-plugins` |
+| macOS / Linux  | `fulcrum watch-plugins`  |
+| Windows | `.\fulcrum.cmd watch-plugins` |
 
 ### query
 

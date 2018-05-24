@@ -10,8 +10,6 @@ branches:
     - gh-pages
 
 language: ruby
-rvm:
-  - 2.1.4
 
 sudo: false
 

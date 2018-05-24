@@ -8,11 +8,11 @@ category: section
 
 One way to conduct unbiased systematic sampling is through fixed radius plots. A fixed radius plot is great for sampling trees that are less than the specified breakpoint diameter.
 
-![](/public/img/plot-center.png)
+![Center](/public/img/plot-center.png)
 
 This calculation field reveals the radius that you should be working with. It pulls in the acre size you would like to survey and the slope value at the site to calculate the length of the radius.
 
-![](/public/img/radius.png)
+![Radius](/public/img/radius.png)
 
 You can read more about the methods on the [US Forest Service](http://www.fs.fed.us/nrm/fsveg/) site.
 

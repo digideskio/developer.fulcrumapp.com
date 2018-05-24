@@ -9,6 +9,7 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
   - "Properties": video-properties
   - "Validations": validations
   - "Notes": notes
@@ -46,6 +47,22 @@ The Videos API gives you access to a record's videos, including the GPS track. I
 | GET | /api/v2/videos/**:id**/track.gpx | Fetch the GPS track for a single video as GPX. |
 | GET | /api/v2/videos/**:id**/track.kml | Fetch the GPS track for a single video as KML. |
 | POST | /api/v2/videos/upload | Upload a single video (.mp4) or a single video track (.json). |
+
+## Query Parameters
+
+Available parameters to query the videos in your account. All of the parameters may be used together to filter your videos for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | The id of the form with which the video is associated. Leaving this blank will query against all of your videos. |
+| newest_first | boolean | If present, videos will be sorted by `updated_at` date.
+| page | integer | The page number requested. |
+| per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
+| processed | boolean | Video has been completely processed. |
+| record_id | string | The id of the record with which the video is associated. |
+| stored | boolean | Video has been completely stored. |
+| uploaded | boolean | Video has been completely uploaded. |
 
 ## Video Properties
 
@@ -217,71 +234,22 @@ Example validation response if `access_key` is not included:
   "tracks": [
     {
       "track": [
-        [
-          1431203070243,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          0,
-          0
-        ],
-        [
-          1431203070515,
-          42.8557467,
-          -73.902393,
-          24,
-          4,
-          null,
-          236,
-          0.43829214572906494,
-          223,
-          -1
-        ],
-        [
-          1431203071515,
-          42.8557455,
-          -73.90239,
-          24,
-          4,
-          null,
-          236,
-          0.4294182062149048,
-          225,
-          0
-        ],
-        [
-          1431203072485,
-          42.8557415,
-          -73.9023935,
-          23,
-          4,
-          null,
-          236,
-          0.5299999713897705,
-          232,
-          1
-        ],
-        [
-          1431203073529,
-          42.8557323,
-          -73.9023998,
-          23,
-          4,
-          null,
-          236,
-          0.7382411360740662,
-          225,
-          0
-        ]
+        [1431203070243, null, null, null, null, null, null, null, 0, 0],
+        [1431203070515, 42.8557467, -73.902393, 24, 4, null, 236, 0.43829214572906494, 223, -1],
+        [1431203071515, 42.8557455, -73.90239, 24, 4, null, 236, 0.4294182062149048, 225, 0],
+        [1431203072485, 42.8557415, -73.9023935, 23, 4, null, 236, 0.5299999713897705, 232, 1],
+        [1431203073529, 42.8557323, -73.9023998, 23, 4, null, 236, 0.7382411360740662, 225, 0]
       ]
     }
   ]
 }
 ```
+
+Each video track consists of an array of track point arrays. Each track point array may include the following items in this order:
+```
+[timestamp (milliseconds since Unix Epoch), latitude, longitude, altitude, horizontal_accuracy, vertical_accuracy, course, speed, heading, inclination]
+```
+Each item should be a number or null and the only required items are timestamp, latitude, and longitude.
 
 ### Get the metadata for all videos
 

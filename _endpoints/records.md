@@ -84,9 +84,9 @@ Records will still be ordered according to the `updated_at` column, even when fi
 | updated_by | string | no | yes | The name of user who last updated the record. |
 | updated_by_id | string | no | yes | The id of user who last updated the record. |
 | changeset_id | string | no | no | The id of the [changeset](/endpoints/changesets/) associated with the record. |
-| project_id | string | no | no | The id of the [project](http://www.fulcrumapp.com/help/projects/) tagged to the record. |
-| assigned_to | string | no | no | The name of the user the record is assigned to. |
-| assigned_to_id | string | no | no | The id of the user the record is assigned to. |
+| project_id | string | no | no | The id of the [project](http://help.fulcrumapp.com/web-app/what-are-projects) tagged to the record. |
+| assigned_to | string | no | yes | The name of the user the record is assigned to. |
+| assigned_to_id | string | no | no | The id of the user the record is assigned to (`user_id`). |
 | created_duration | number | no | no | The number of seconds spent creating the record. |
 | updated_duration | number | no | no | The number of seconds spent updating the record. |
 | edited_duration | number | no | no | The total cumulative seconds spent editing the record (creating + all updates). |
@@ -109,7 +109,7 @@ Records will still be ordered according to the `updated_at` column, even when fi
 | Date | string | `"2015"` |
 | Time | string | `"13:50"` |
 | Barcode | string | `"123456789"` |
-| Hyperlink | string | `"http://www.fulcrumapp.com"` |
+| Hyperlink | string | `"https://www.fulcrumapp.com"` |
 | Calculation | string | `"6"` |
 | Single Choice | object with the following keys: `choice_values` (array of selected options) `other values` (array, empty or with values) | `{"choice_values": ["Red"],"other_values": []}` |
 | Multiple Choice | object with the following keys: `choice_values` (array of selected options) `other values` (array, empty or with values) | `{"choice_values": ["Red","White"],"other_values": []}` |
@@ -119,6 +119,7 @@ Records will still be ordered according to the `updated_at` column, even when fi
 | Video | array of video objects | `[{"video_id":"712850b4-4de2-4d66-a6cc-034201245b52,"caption": ""}]` |
 | Audio | array of audio objects | `[{"audio_id":"f81d51b5-1ce9-465b-be0b-27f1eca41e2c,"caption": ""}]` |
 | Signature | signature object | `{"timestamp": "2015-07-09T14:54:04Z","signature_id": "9855e3f2-85a5-4b9f-9e62-0b1bbcfef091"}` |
+| Record Link | array of record objects | `[{"record_id": "988b963c-896c-4f50-be7b-5b5d151f2ed7"},{"record_id": "8a91ba6c-f99e-47a1-8246-807b4a44b28a"}]` |
 | Repeatable | array of repeatable objects | `[{"id":"d67801a0-adc1-6f60-4b0d-ec3a7191b34b","geometry":{"type":"Point","coordinates":[-73.123456,42.123456]},"form_values": {"0129": "Hello world"}}]` |
 
 ## Validations

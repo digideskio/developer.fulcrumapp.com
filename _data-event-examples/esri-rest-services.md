@@ -17,18 +17,27 @@ This example passes your Fulcrum latitude and longitude as a point parameter in 
 function getFloodInfo() {
 
   var options = {
-    url: 'https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHLWMS/MapServer/28/query?where=&text=&objectIds=&time=&geometry=' + LONGITUDE() + ',' + LATITUDE() + '&geometryType=esriGeometryPoint&inSR=EPSG%3A4326&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&returnTrueCurves=false&resultOffset=&resultRecordCount=&f=pjson'
+    url: 'https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHLWMS/MapServer/28/query',
+    qs: {
+      geometry: LONGITUDE() + ',' + LATITUDE(),
+      geometryType: 'esriGeometryPoint',
+      inSR: '4326',
+      spatialRel: 'esriSpatialRelIntersects',
+      outFields: '*',
+      returnGeometry: false,
+      f: 'pjson'
+    }
   };
 
   REQUEST(options, function (err, res, body) {
     if (err) {
       ALERT('Error: ' + err.message);
     } else {
-      var zone = JSON.parse(body);
-      if (zone && zone.features[0]) {
-        SETVALUE('flood_zone', zone.features[0].attributes['FLD_ZONE']);
-        SETVALUE('flood_zone_subtype', zone.features[0].attributes['ZONE_SUBTY']);
-        SETVALUE('dfirm_id', zone.features[0].attributes['DFIRM_ID']);
+      var result = JSON.parse(body);
+      if (result && result.features[0]) {
+        SETVALUE('flood_zone', result.features[0].attributes['FLD_ZONE']);
+        SETVALUE('flood_zone_subtype', result.features[0].attributes['ZONE_SUBTY']);
+        SETVALUE('dfirm_id', result.features[0].attributes['DFIRM_ID']);
       } else {
         SETVALUE('flood_zone', 'NA');
         SETVALUE('flood_zone_subtype', 'NA');

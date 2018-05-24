@@ -9,13 +9,14 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
   - "Properties": photo-properties
   - "Validations": validations
   - "Notes": notes
   - "Examples": examples
 ---
 
-The Photos API gives you access to a record's photos, including thumbnails, and captions. In order to upload a record with photos, you must first upload each photo individually. By default, fetching the records will generate the URLs for the photo and the thumbnail, if a photo exists for that record.
+The Photos API gives you access to a record's photos, including thumbnails. In order to upload a record with photos, you must first upload each photo individually. By default, fetching the records will generate the URLs for the photo and the thumbnail, if a photo exists for that record.
 
 ## Endpoints
 
@@ -30,6 +31,22 @@ The Photos API gives you access to a record's photos, including thumbnails, and 
 | GET | /api/v2/photos/**:id**/large.json | Fetch the large version metadata for a single photo. |
 | GET | /api/v2/photos/**:id**/large.jpg | Fetch the large version image for a single photo. |
 | POST | /api/v2/photos.json | Upload a single photo. |
+
+## Query Parameters
+
+Available parameters to query the photos in your account. All of the parameters may be used together to filter your photos for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | The id of the form with which the photo is associated. Leaving this blank will query against all of your photos. |
+| newest_first | boolean | If present, photos will be sorted by `updated_at` date.
+| page | integer | The page number requested. |
+| per_page | integer | Number of records per page. By default, all requests are paginated to the maximum value of 20,000 items per request. |
+| processed | boolean | Photo has been completely processed. |
+| record_id | string | The id of the record with which the photo is associated. |
+| stored | boolean | Photo has been completely stored. |
+| uploaded | boolean | Photo has been completely uploaded. |
 
 ## Photo Properties
 

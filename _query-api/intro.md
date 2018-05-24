@@ -30,6 +30,7 @@ We have a [library of examples](/query-api/examples/) available for learning wha
 
 ## Limitations
 
+- The Query API is not currently enabled by default. If you are on a Professional plan and would like to try it out, please [contact us](http://help.fulcrumapp.com/).
 - API calls are limited to 5,000 calls an hour per user.
 - Queries cannot exceed 10 seconds of processing time to complete.
 

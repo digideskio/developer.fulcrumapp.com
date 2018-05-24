@@ -58,7 +58,7 @@ Be sure you have a database already created with the PostGIS extension installed
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum postgres --org 'Organization Name'`  |
-| Windows | `.\fulcrum.cmd postgres --org 'Organization Name'` |
+| Windows | `.\fulcrum.cmd postgres --org "Organization Name"` |
 
 ### Keep the database in sync with your Organization:
 
@@ -66,7 +66,7 @@ Be sure you have a database already created with the PostGIS extension installed
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum sync --org 'Organization Name' --pg-database 'mydatabase' --forever`  |
-| Windows | `.\fulcrum.cmd sync --org 'Organization Name' --pg-database 'mydatabase' --forever` |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name" --pg-database "mydatabase" --forever` |
 
 ---
 
@@ -105,15 +105,15 @@ Once this plugin is installed, the `sync` command will keep your GeoPackage data
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum geopackage --org 'Organization Name'`  |
-| Windows | `.\fulcrum.cmd geopackage --org 'Organization Name'` |
+| Windows | `.\fulcrum.cmd geopackage --org "Organization Name"` |
 
 This will create the following GeoPackage file:
 
 {:.table.table-striped.event-table}
 | OS | Path |
 | - | - |
-| macOS / Linux  | /Users/username/.fulcrum/geopackage/Organization Name.gpkg |
-| Windows | \Users\username\AppData\Local\Programs\Fulcrum\geopackage\Organization Name.gpkg |
+| macOS / Linux  | `/Users/username/.fulcrum/geopackage/Organization Name.gpkg` |
+| Windows | `\Users\username\AppData\Local\Programs\Fulcrum\geopackage\Organization Name.gpkg` |
 
 ### Keep the database in sync with your Organization:
 
@@ -121,7 +121,7 @@ This will create the following GeoPackage file:
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum sync --org 'Organization Name' --forever`  |
-| Windows | `.\fulcrum.cmd sync --org 'Organization Name' --forever` |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name" --forever` |
 
 ---
 
@@ -129,7 +129,7 @@ This will create the following GeoPackage file:
 
 [MS SQL Server](https://www.microsoft.com/en-us/sql-server/) is a popular relational database management system (RDBMS) developed by Microsoft.
 
-Once this plugin is installed, the `sync` command will keep your MS SQL Server database in sync with your Fulcrum Organization. [Source code on GitHub](https://github.com/fulcrumapp/fulcrum-desktop-postgres).
+Once this plugin is installed, the `sync` command will keep your MS SQL Server database in sync with your Fulcrum Organization. [Source code on GitHub](https://github.com/fulcrumapp/fulcrum-desktop-mssql).
 
 #### Options:
 
@@ -140,12 +140,12 @@ Once this plugin is installed, the `sync` command will keep your MS SQL Server d
 | `--help` | Show help | false | na |
 | `--org` | organization name | true | na |
 | `--setup` | setup the database | false | na |
-| `--ms-database` | mssql database name | false | `fulcrumapp` |
-| `--ms-host` | mssql server host | false | `localhost` |
-| `--ms-port` | mssql server port | false | `1433` |
-| `--ms-user` | mssql user | false | na |
-| `--ms-password` | mssql password | false | na |
-| `--ms-schema` | mssql schema | false | na |
+| `--msDatabase` | mssql database name | false | `fulcrumapp` |
+| `--msHost` | mssql server host | false | `localhost` |
+| `--msPort` | mssql server port | false | `1433` |
+| `--msUser` | mssql user | false | na |
+| `--msPassword` | mssql password | false | na |
+| `--msSchema` | mssql schema | false | na |
 
 ### Install the plugin:
 
@@ -162,16 +162,16 @@ The `--setup` option allows you to create the database from the fulcrum CLI.
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum mssql --setup --org 'Organization Name' --ms-user USERNAME --ms-password PASSWORD --ms-host 'localhost'`  |
-| Windows | `.\fulcrum.cmd mssql --setup --org 'Organization Name' --ms-user USERNAME --ms-password PASSWORD --ms-host 'localhost'` |
+| macOS / Linux  | `fulcrum mssql --setup --org 'Organization Name' --msUser USERNAME --msPassword PASSWORD --msHost 'localhost'`  |
+| Windows | `.\fulcrum.cmd mssql --setup --org "Organization Name" --msUser "USERNAME" --msPassword "PASSWORD" --msHost "localhost"` |
 
 ### Keep the database in sync with your Organization:
 
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum sync --org 'Organization Name' --forever --ms-user USERNAME --ms-password PASSWORD --ms-host 'localhost'`  |
-| Windows | `.\fulcrum.cmd sync --org 'Organization Name' --forever --ms-user USERNAME --ms-password PASSWORD --ms-host 'localhost'` |
+| macOS / Linux  | `fulcrum sync --org 'Organization Name' --forever --msUser USERNAME --msPassword PASSWORD --msHost 'localhost'`  |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name" --forever --msUser "USERNAME" --msPassword "PASSWORD" --msHost "localhost"` |
 
 ---
 
@@ -209,7 +209,7 @@ Concurrent file downloads and automatic retries for Fulcrum media files (photos,
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum media --org 'Organization Name' --media-path /path/to/media/storage`  |
-| Windows | `.\fulcrum.cmd media --org 'Organization Name' --media-path /path/to/media/storage` |
+| Windows | `.\fulcrum.cmd media --org "Organization Name" --media-path \path\to\media\storage` |
 
 ---
 
@@ -247,8 +247,8 @@ export S3_BUCKET="mybucket"
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux  | `fulcrum sync --org 'Organization Name'`  |
-| Windows | `.\fulcrum.cmd sync --org 'Organization Name'` |
+| macOS / Linux  | `fulcrum s3 --org 'Organization Name'`  |
+| Windows | `.\fulcrum.cmd s3 --org "Organization Name"` |
 
 ---
 
@@ -294,7 +294,7 @@ Generate custom PDF reports from Fulcrum data. To customize reports, edit `templ
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum reports --org 'Organization Name' --form 'GeoBooze' --template custom.ejs`  |
-| Windows | `.\fulcrum.cmd reports --org 'Organization Name' --form 'GeoBooze' --template custom.ejs` |
+| Windows | `.\fulcrum.cmd reports --org "Organization Name" --form "GeoBooze" --template custom.ejs` |
 
 ### Keep reports in sync
 
@@ -302,4 +302,4 @@ Generate custom PDF reports from Fulcrum data. To customize reports, edit `templ
 | OS | Command |
 | - | - |
 | macOS / Linux  | `fulcrum sync --org 'Organization Name'`  |
-| Windows | `.\fulcrum.cmd sync --org 'Organization Name'` |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name"` |

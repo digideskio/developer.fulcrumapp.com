@@ -7,38 +7,24 @@ category: section
 ---
 
 ```js
-function weekNum ( d ) {
-
-  // Create a copy of this date object
-  var target  = new Date(d.valueOf());
-
-  // ISO week date weeks start on monday
-  // so correct the day number
-  var dayNr   = (d.getDay() + 6) % 7;
-
-  // Set the target to the thursday of this week so the
-  // target date is in the right year
-  target.setDate(target.getDate() - dayNr + 3);
-
-  // ISO 8601 states that week 1 is the week
-  // with january 4th in it
-  var jan4    = new Date(target.getFullYear(), 0, 4);
-
-  // Number of days between target date and january 4th
-  var dayDiff = (target - jan4) / 86400000;
-
-  // Calculate week number: Week 1 (january 4th) plus the
-  // number of weeks between target date and january 4th
-  var weekNr = 1 + Math.ceil(dayDiff / 7);
-
-  return weekNr;
+function weekNum( d ) {
+    // Create a copy of this date object
+    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    // ISO week date weeks start on monday
+    // so correct the day number
+    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay()||7));
+    // Get first day of year
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    // Calculate full weeks to nearest Thursday
+    var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+    // Return week number
+    return weekNo;
 }
 
 // Use to pull current date
 // var now = new Date();
 // weekNum(now);
 
-// Pulls date from date field
-var date = DATEVALUE($date);
+var date = DATEVALUE($date));
 SETRESULT(weekNum(date));
 ```

@@ -51,23 +51,13 @@ Install from the Setup .exe and follow the instructions. This will create a shor
 
 Command installation location: _\Users\username\AppData\Local\Programs\Fulcrum\scripts\fulcrum.cmd_
 
-Plugin installation directory: _\Users\username\.fulcrum\plugins_
+Plugin installation directory: _\Users\username\\.fulcrum\plugins_
 
 Internal SQLite database: _\Users\username\AppData\Local\Fulcrum\data\fulcrum.db_
 
 ## Getting started
 
-After installing the core command line tools, you should install one of the database plugins, authenticate with your Fulcrum account to setup your local database, and sync your Organization's data down.
-
-### Install the PostgreSQL database plugin
-
-By default, the PostgreSQL plugin expects a database named _fulcrumapp_ with the [PostGIS extension](http://www.postgis.net/) installed.
-
-{:.table.table-striped.event-table}
-| OS | Command |
-| - | - |
-| macOS / Linux  | `fulcrum install-plugin --url https://github.com/fulcrumapp/fulcrum-desktop-postgres`  |
-| Windows | `.\fulcrum.cmd install-plugin --url https://github.com/fulcrumapp/fulcrum-desktop-postgres` |
+After installing the core command line tools, you should authenticate with your Fulcrum account to setup your local database, sync your Organization's data down, install one of the [database plugins](/desktop/plugins/#database-plugins), and then setup auto-syncing. You can authenticate to Fulcrum via username/password or API token.
 
 ### Setup the local Fulcrum database
 
@@ -75,8 +65,9 @@ By default, the PostgreSQL plugin expects a database named _fulcrumapp_ with the
 | OS | Command |
 | - | - |
 | macOS / Linux (prompt) | `fulcrum setup` |
-| macOS / Linux  | `fulcrum setup --email EMAIL --password SECRET` |
-| Windows | `.\fulcrum.cmd setup --email EMAIL --password SECRET` |
+| macOS / Linux  | `fulcrum setup --email 'EMAIL' --password 'SECRET'` |
+| Windows | `.\fulcrum.cmd setup --email "EMAIL" --password "SECRET"` |
+| All | `fulcrum setup --token <token>` |
 
 ### Sync your Organization
 
@@ -85,6 +76,29 @@ By default, the PostgreSQL plugin expects a database named _fulcrumapp_ with the
 | - | - |
 | macOS / Linux  | `fulcrum sync --org 'Organization Name'`  |
 | Windows | `.\fulcrum.cmd sync --org "Organization Name"` |
+
+_Note: if you have already installed the PostgreSQL plugin (below), you will also need to pass any parameters that your connection requires._  
+_Example:_ `fulcrum sync --org 'Organization Name' --pg-user 'myuser' --pg-password 'mypassword' --pg-database 'mydatabase'`
+
+### Install the PostgreSQL database plugin
+
+By default, the PostgreSQL plugin expects a database named _fulcrumapp_ with the [PostGIS extension](http://www.postgis.net/) installed.
+
+{:.table.table-striped.event-table}
+| OS | Command |
+| - | - |
+| macOS / Linux  | `fulcrum install-plugin --name postgres`  |
+| Windows | `.\fulcrum.cmd install-plugin --name postgres` |
+
+### Setup continuous sync
+
+Continually sync the database to pull down changes from Fulcrum.
+
+{:.table.table-striped.event-table}
+| OS | Command |
+| - | - |
+| macOS / Linux  | `fulcrum sync --org 'Organization Name' --pg-user 'myuser' --pg-password 'mypassword' --forever`  |
+| Windows | `.\fulcrum.cmd sync --org "Organization Name" --pg-user "myuser" --pg-password "mypassword"  --forever` |
 
 _Windows seems to prefer double quotes with command parameters._
 
