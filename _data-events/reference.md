@@ -28,7 +28,7 @@ Clears a timeout that was previously started with SETTIMEOUT.
 
 ### [CONFIRM](/data-events/reference/confirm/)
 
-Display a question to the user with an "Okay or Cancel" response and a callback to respond to the result
+Display a question to the user with an 'Okay or Cancel' response and a callback to respond to the result
 
 ### [CURRENTLOCATION](/data-events/reference/currentlocation/)
 
