@@ -172,6 +172,14 @@ Returns the boolean value `false`.
 
 Returns definition object for a specified field
 
+### [FIELDS](/expressions/reference/fields/)
+
+Returns the child fields of a section or repeatable
+
+### [FIELDNAMES](/expressions/reference/fieldnames/)
+
+Returns the child field names of a section or repeatable
+
 ### [FIELDTYPE](/expressions/reference/fieldtype/)
 
 Returns the field type of a field by its data name
@@ -203,6 +211,10 @@ Returns the form definition object
 ### [FORMAT](/expressions/reference/format/)
 
 Formats a string
+
+### [FORMATADDRESS](/expressions/reference/formataddress/)
+
+Formats an address field object into a string
 
 ### [FORMATNUMBER](/expressions/reference/formatnumber/)
 
@@ -543,6 +555,10 @@ Returns the current record status value.
 ### [STATUSLABEL](/expressions/reference/statuslabel/)
 
 Returns the current record status label.
+
+### [STRING](/expressions/reference/string/)
+
+Converts the given parameter to a string value
 
 ### [SUBSTITUTE](/expressions/reference/substitute/)
 

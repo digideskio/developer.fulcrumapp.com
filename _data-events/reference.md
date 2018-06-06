@@ -38,6 +38,14 @@ Returns a location object containing metadata about the user's current location.
 
 Display a validation error message and prevent the record or repeatable item from being saved.
 
+### [ISLANDSCAPE](/data-events/reference/islandscape/)
+
+Returns true if the photo or video is in landscape mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+
+### [ISPORTRAIT](/data-events/reference/isportrait/)
+
+Returns true if the photo or video is in portrait mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+
 ### [MESSAGEBOX](/data-events/reference/messagebox/)
 
 Display a message box with configurable title, message, buttons and optional text input.
