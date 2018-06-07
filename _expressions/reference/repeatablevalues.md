@@ -31,3 +31,15 @@ REPEATABLEVALUES($repeatable_field, 'choice_value').map(CHOICEVALUE)
 
 // returns ["widget","spinner","gizmo"]
 ```
+
+```js
+REPEATABLEVALUES($repeatable_field, ['child_repeatable', 'grandchild_repeatable', 'field_inside_nested_rep']);
+
+//returns the values in the field_inside_nested_rep fields in the grandchild_repeatable section.
+//
+//level of calculation field
+// * repeatable_field
+//  * child_repeatable
+//   * grandchild_repeatable
+//    * field_inside_nested_rep
+```
