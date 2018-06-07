@@ -27,7 +27,7 @@ REPEATABLEVALUES($repeatable_field, 'cost')
 
 
 ```js
-REPEATABLEVALUES($repeatable_field, 'item').map(CHOICEVALUE)
+REPEATABLEVALUES($repeatable_field, 'choice_value').map(CHOICEVALUE)
 
-// Get the value from a choice list: returns [widget,spinner,gizmo]
+// returns ["widget","spinner","gizmo"]
 ```

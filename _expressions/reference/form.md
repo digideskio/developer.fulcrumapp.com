@@ -18,13 +18,6 @@ Object
 ### Examples
 
 ```js
-FORM()
-
-// returns the entire form object
-```
-
-
-```js
 FORM().name
 
 // returns "Fire Hydrant Inspection Form"

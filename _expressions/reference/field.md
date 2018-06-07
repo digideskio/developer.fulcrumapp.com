@@ -18,14 +18,14 @@ Object
 ### Examples
 
 ```js
-FIELD('condition')
+FIELD('child_item_cost').label
 
-// returns the definition object for the field with a dataName of 'condition'
+// returns "Child Item Cost"
 ```
 
 
 ```js
-FIELD('condition').parent.label
+FIELD('child_item_cost').parent.label
 
-// returns the label string for the parent of the field with a dataName of 'condition'
+// returns "Child Items"
 ```

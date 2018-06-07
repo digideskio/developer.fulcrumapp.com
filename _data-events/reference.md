@@ -26,6 +26,10 @@ Clears an interval that was previously started with SETINTERVAL.
 
 Clears a timeout that was previously started with SETTIMEOUT.
 
+### [CONFIRM](/data-events/reference/confirm/)
+
+Display a question to the user with an 'Okay or Cancel' response and a callback to respond to the result
+
 ### [CURRENTLOCATION](/data-events/reference/currentlocation/)
 
 Returns a location object containing metadata about the user's current location. This location may be different than the record location.
@@ -33,6 +37,18 @@ Returns a location object containing metadata about the user's current location.
 ### [INVALID](/data-events/reference/invalid/)
 
 Display a validation error message and prevent the record or repeatable item from being saved.
+
+### [ISLANDSCAPE](/data-events/reference/islandscape/)
+
+Returns true if the photo or video is in landscape mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+
+### [ISPORTRAIT](/data-events/reference/isportrait/)
+
+Returns true if the photo or video is in portrait mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+
+### [MESSAGEBOX](/data-events/reference/messagebox/)
+
+Display a message box with configurable title, message, buttons and optional text input.
 
 ### [OFF](/data-events/reference/off/)
 
@@ -49,6 +65,10 @@ Open a URL for a website or mobile app.
 ### [PROGRESS](/data-events/reference/progress/)
 
 Display a non-dismissible progress message in the mobile app.
+
+### [PROMPT](/data-events/reference/prompt/)
+
+Display a text field to get input from the user and a callback to respond to the result
 
 ### [REQUEST](/data-events/reference/request/)
 
