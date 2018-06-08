@@ -21,7 +21,7 @@ Data Events allow users to perform ​_actions_​ on the mobile device when cer
 | Event | Description | Listener Function Signature |
 |--------|----------|-------------|-------------|
 | `'load-record'` | Fires when the record editor is displayed. This event can be used to perform one-time initialization when the record editor opens. This event is fired when creating new records and editing existing records. | `ON('load-record', callback);` |
-| `'unload-record'` | Acts as the opposite of `load-record` and fires when the record editor is closed. Does not fire when the record is saved. | `ON('unload-record', callback);` |
+| `'unload-record'` | Acts as the opposite of `load-record` and fires when the record editor is closed. | `ON('unload-record', callback);` |
 | `'new-record'` | Fires when a new record is created, after `'load-record'`. This event is only fired for new records. It can be used to populate custom default logic or any other custom actions that only need to be performed for new records. | `ON('new-record', callback);` |
 | `'edit-record'` | Fires when a record is edited, after `'load-record'`. This event is only fired when opening existing records. It can be used to perform custom logic when an existing record is opened. | `ON('edit-record', callback);` |
 | `'save-record'` | Fires immediately before a record is saved and after it's been validated. Inside this event it's possible to make last-second updates to records right before the record is saved. You cannot perform asynchronous tasks in this event. Once the callback is finished the record will be saved and the editor will close. If you want to prevent the record from saving, you must use the `validate-record` or `validate-repeatable` events. | `ON('save-record', callback);` |
