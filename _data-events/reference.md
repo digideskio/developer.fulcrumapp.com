@@ -40,11 +40,11 @@ Display a validation error message and prevent the record or repeatable item fro
 
 ### [ISLANDSCAPE](/data-events/reference/islandscape/)
 
-Returns true if the photo or video is in landscape mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+Returns true if the photo or video is in landscape mode.
 
 ### [ISPORTRAIT](/data-events/reference/isportrait/)
 
-Returns true if the photo or video is in portrait mode. This is intended to be used inside of the `add-photo` and `add-video` events and operate on the parameter passed to the event handler.
+Returns true if the photo or video is in portrait mode.
 
 ### [MESSAGEBOX](/data-events/reference/messagebox/)
 
