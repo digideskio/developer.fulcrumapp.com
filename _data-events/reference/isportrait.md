@@ -13,4 +13,10 @@ permalink: /data-events/reference/isportrait/
 
 ### Examples
 
-No examples
+```js
+ON('add-photo', 'photos', function (event) {
+   if (ISPORTRAIT(event.value)) {
+     ALERT('Photo is portrait!');
+   }
+});
+```

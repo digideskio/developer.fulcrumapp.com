@@ -13,4 +13,10 @@ permalink: /data-events/reference/islandscape/
 
 ### Examples
 
-No examples
+```js
+ON('add-photo', 'photos', function (event) {
+   if (ISLANDSCAPE(event.value)) {
+     ALERT('Photo is landscape!');
+   }
+});
+```
