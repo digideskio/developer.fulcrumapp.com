@@ -2,10 +2,14 @@
 layout: default
 section: data_events
 title: "ISPORTRAIT"
-description: "Returns true if the photo or video is in portrait mode. This is intended to be used inside of the add-photo and add-video events and operate on the parameter passed to the event handler."
+description: "Returns true if the photo or video is in portrait mode."
 category: section
 permalink: /data-events/reference/isportrait/
 ---
+
+### Description
+
+Returns true if the photo or video is in portrait mode. This is intended to be used inside of the add-photo and add-video events and operate on the parameter passed to the event handler.
 
 ### Parameters
 

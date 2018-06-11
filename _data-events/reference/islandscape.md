@@ -2,10 +2,14 @@
 layout: default
 section: data_events
 title: "ISLANDSCAPE"
-description: "Returns true if the photo or video is in landscape mode. This is intended to be used inside of the add-photo and add-video events and operate on the parameter passed to the event handler."
+description: "Returns true if the photo or video is in landscape mode."
 category: section
 permalink: /data-events/reference/islandscape/
 ---
+
+### Description
+
+Returns true if the photo or video is in landscape mode. This is intended to be used inside of the add-photo and add-video events and operate on the parameter passed to the event handler.
 
 ### Parameters
 
