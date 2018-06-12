@@ -17,6 +17,15 @@ Check out the full documentation on available formulae by browsing the [complete
 
 We have a [library of examples](/expressions/examples/) available for showcasing what you can do with calculation fields. Feel free to contribute your own examples by [submitting a pull request](https://github.com/fulcrumapp/developer.fulcrumapp.com/tree/gh-pages/_expression-examples).
 
+## Display Formats
+
+You must select a format for displaying the expression result.
+
+* **Text** - Use this for displaying text or unknown results.
+* **Number** - Use this only for displaying numeric results.
+* **Date** - Use this for displaying formatted date results. The result should be in the following format: `YYYY-MM-DD`.
+* **Currency** - Use this for displaying formatted currency results. The result should be a number and you'll need to select a specific currency.
+
 ## Debugging
 
 You can enable verbose error reporting in the app when building or troubleshooting complex expressions by setting `SHOWERRORS(true)`. Another useful way to interactively test expressions is to use the `eval()` function in combination with a text field and `INSPECT()`. This allows you to type in your code and immediately inspect how it is being evaluated.
