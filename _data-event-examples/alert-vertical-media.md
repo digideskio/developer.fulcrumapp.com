@@ -17,11 +17,7 @@ Note that using [`INVALID`](/data-events/reference/invalid/) with `add-photo` or
 ```js
 ON('add-photo', 'photos', function(event) {
   if (event.value.width < event.value.height) {
-    if (PLATFORM() === 'iOS') {
-      INVALID('Please retake this photo in landscape orientation. If you *did* take the photo in landscape orientation, check to ensure your device \'portrait orientation lock\' is OFF.');
-    } else {
-      INVALID('Please retake the photo in landscape orientation.');
-    }
+    INVALID('Please retake the photo in landscape orientation.');
   }
 });
 
