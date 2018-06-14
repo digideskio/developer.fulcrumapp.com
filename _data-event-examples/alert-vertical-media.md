@@ -10,7 +10,7 @@ tags:
   - qa/qc
 ---
 
-When photos are added to a field named `photos`, alert the user with a message if they're taken as portrait/vertical (where the width would be less than the height). With iOS devices, having the Portrait Orientation lock enabled will always produce photos with portrait aspect - it should be disabled if you're using this code in an attempt to collect records with landscape aspect photos. For videos, we want to check the `orientation` property.
+When photos are added to a field named `photos`, alert the user with a message if they're taken as portrait/vertical (where the width would be less than the height). For videos, we want to check the `orientation` property.
 
 Note that using [`INVALID`](/data-events/reference/invalid/) with `add-photo` or `add-video` media events prevents the media file from being attached to the record.
 
