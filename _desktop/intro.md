@@ -47,7 +47,7 @@ Internal SQLite database: _/Users/username/Library/Application Support/Fulcrum/d
 
 ### Windows
 
-Install from the Setup .exe and follow the instructions. This will create a shortcut icon on your desktop (and open up a GUI window - _which is not currently functional_ - you can close this window). Double-clicking the shortcut icon will open the GUI again; doing this also triggers the auto-updater. If there is an updated release available, it will be downloaded and installed.
+Install from the Setup .exe and follow the instructions. This will create a shortcut icon on your desktop (and open up a GUI window - _which is not currently functional_ - you can close this window). Double-clicking the shortcut icon will open the GUI again; doing this also triggers the auto-updater. If there is an updated release available, it will be downloaded and installed. Windows users on older operating systems may experience a TLS issue - [please see this](https://github.com/fulcrumapp/fulcrum-desktop/issues/16#issuecomment-398659575) for a workaround to enable more modern versions of the protocol.
 
 Command installation location: _\Users\username\AppData\Local\Programs\Fulcrum\scripts\fulcrum.cmd_
 
