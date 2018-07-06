@@ -9,11 +9,13 @@ img: /assets/img/guides/
 difficulty: advanced
 menu:
   - "Endpoints": endpoints
+  - "Query Parameters": query-parameters
+  - "Properties": membership-properties
   - "Notes": notes
   - "Examples": examples
 ---
 
-The memberships API provides access to your projects memberships. All methods require authentication via an API key as either an HTTP request header or query string parameter. The API allows you to see lists of users associated with each project, form, or layer, with a particular project, form, or layer, and to add and delete user membership in particularproject, form, or layer.
+The Memberships API allows you to view, add, or remove non-owner users associated with the projects, forms, and layers in your Fulcrum account.
 
 ## Endpoints
 
@@ -21,51 +23,48 @@ The memberships API provides access to your projects memberships. All methods re
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | /api/v2/memberships.json | Fetch all members in your organization |
-| GET | /api/v2/memberships.json?form_id=**:id** | Fetch all members for a given form |
-| GET | /api/v2/memberships.json?project_id=**:id** | Fetch all members for a given project |
-| GET | /api/v2/memberships.json?layer_id=**:id** | Fetch memberships for a particular layer |
 | POST | /api/v2/memberships/change_permissions.json | Add or remove membership permissions from layers, forms, or projects |
 
+## Query Parameters
+
+Available parameters to query the members associated with your account. All of the parameters may be used together to filter your data for more accurate results.
+
+{:.table.table-striped}
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| form_id | string | Fetch all members for a given form. |
+| project_id | string | Fetch all members for a given project. |
+| layer_id | string | Fetch all members for a given layer. |
+
+## Membership Properties
+
+{:.table.table-striped}
+| Property | Type | Required | Readonly | Description |
+|----------|------|----------|----------|-------------|
+| id | string | no | yes | The member ID |
+| created_at | timestamp | no | yes | When the member was created |
+| updated_at | timestamp | no | yes | Last time the member was updated |
+| gravatar_email | string | no | yes | Email used for gravatar image |
+| gravatar_image_url | string | no | yes | URL to gravatar image |
+| user_id | string | no | yes | User ID |
+| user | string | no | yes | User full name |
+| first_name | string | no | yes | User first name |
+| last_name | string | no | yes | User last name |
+| email | string | no | yes | User email |
+| role_id | string | no | yes | ID of the user's role |
+| image_small | string | no | yes | User profile image (300px)|
+| image_large | string | no | yes | User profile image (600px)|
+
 ## Notes
- - The 'change permissions' endpoint accepts a json object labeled 'change' with three parameters
- - The first parameter is type, which indicates which object you want to change the membership permisisons of. Valid types are 'project_members', 'form_members', and 'layer_members'
- - The second parameter is the id of the object you want to change the permission of. Valid ID keys are 'project_id', 'form_id' and 'layers_id'
- - The third parameter is the change-set you would like to add or remove. This is a key of either 'add' or 'remove' with the value an array of ids that you would like to alter.
+ - Users with a role of _Owner_ always have access to all resources within the organization.
+ - The `change permissions` endpoint accepts a JSON object labeled `change` with three parameters.
+ - The first parameter is `type`, which indicates which object you want to change the membership permissions of. Valid type values are `project_members`, `form_members`, and `layer_members`.
+ - The second parameter is the id of the object you want to change the permission of. Valid ID keys are `project_id`, `form_id` and `layers_id`. Values must be valid resource IDs.
+ - The third parameter is the changeset you would like to add or remove. This is a key of either `add` or `remove` with the value an array of valid member IDs that you would like to alter.
 
 ## Examples
 
-Below is an example of using curl to fetch a list of memberships from a given project.
-```bash
-curl -H "X-ApiToken: token" -H "Content-Type: application/json" https://api.fulcrumapp.com/api/v2/memberships.json?project_id=3751f03b-043d-48bf-a6cc-747ddd36b777
-```
-
-Below is an example of a curl to post to add a new membership to a given form.
-```bash
-curl -XPOST -H "X-ApiToken: token" -H "Content-Type: application/json" -d@- https://api.fulcrumapp.com/api/v2/memberships/change_permissions.json <<EOF
-{
-  "change": {
-    "type": "form_members",
-    "form_id": "292a22c5-456a-4deb-a7d6-42ac409897b5",
-    "add": [ "49ee5c1a-220f-4deb-8a9b-775706f66433" ]
-  }
-}
-EOF
-```
-
-Below is an example of a curl to post to add a new membership to a given form.
-```bash
-curl -XPOST -H "X-ApiToken: token" -H "Content-Type: application/json" -d@- https://api.fulcrumapp.com/api/v2/memberships/change_permissions.json <<EOF
-{
-  "change": {
-    "type": "form_members",
-    "form_id": "292a22c5-456a-4deb-a7d6-42ac409897b5",
-    "remove": [ "49ee5c1a-220f-4deb-8a9b-775706f66433" ]
-  }
-}
-EOF
-```
-
-## Valid Membership Response
+### Valid Membership Response
 ```json
 {
     "memberships": [
@@ -101,4 +100,35 @@ EOF
         }
     ]
 }
+```
+
+### Get all memberships for a particular project
+```sh
+curl -H "X-ApiToken: token" -H "Content-Type: application/json" https://api.fulcrumapp.com/api/v2/memberships.json?project_id=3751f03b-043d-48bf-a6cc-747ddd36b777
+```
+
+### Add a new member to a form
+```sh
+curl -XPOST -H "X-ApiToken: token" -H "Content-Type: application/json" -d@- https://api.fulcrumapp.com/api/v2/memberships/change_permissions.json <<EOF
+{
+  "change": {
+    "type": "form_members",
+    "form_id": "292a22c5-456a-4deb-a7d6-42ac409897b5",
+    "add": [ "49ee5c1a-220f-4deb-8a9b-775706f66433" ]
+  }
+}
+EOF
+```
+
+### Remove an existing member from a form
+```bash
+curl -XPOST -H "X-ApiToken: token" -H "Content-Type: application/json" -d@- https://api.fulcrumapp.com/api/v2/memberships/change_permissions.json <<EOF
+{
+  "change": {
+    "type": "form_members",
+    "form_id": "292a22c5-456a-4deb-a7d6-42ac409897b5",
+    "remove": [ "49ee5c1a-220f-4deb-8a9b-775706f66433" ]
+  }
+}
+EOF
 ```
