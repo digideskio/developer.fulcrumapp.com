@@ -2,7 +2,7 @@
 layout: default
 section: endpoints
 order: 2
-title: "Query"
+title: "Query "
 description: "SQL read access to account tables and objects"
 category: section
 img: /assets/img/guides/
