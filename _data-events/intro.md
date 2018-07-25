@@ -22,10 +22,10 @@ Data Events allow users to perform ​_actions_​ on the mobile device when cer
 |--------|----------|-------------|-------------|
 | `'load-record'` | Fires when the record editor is displayed. This event can be used to perform one-time initialization when the record editor opens. This event is fired when creating new records and editing existing records. | `ON('load-record', callback);` |
 | `'unload-record'` | Acts as the opposite of `load-record` and fires when the record editor is closed. | `ON('unload-record', callback);` |
-| `'new-record'` | Fires when a new record is created, after `'load-record'`. This event is only fired for new records. It can be used to populate custom default logic or any other custom actions that only need to be performed for new records. | `ON('new-record', callback);` |
-| `'edit-record'` | Fires when a record is edited, after `'load-record'`. This event is only fired when opening existing records. It can be used to perform custom logic when an existing record is opened. | `ON('edit-record', callback);` |
+| `'new-record'` | Fires when a new record is created, after `load-record`. This event is only fired for new records. It can be used to populate custom default logic or any other custom actions that only need to be performed for new records. | `ON('new-record', callback);` |
+| `'edit-record'` | Fires when a record is edited, after `load-record`. This event is only fired when opening existing records. It can be used to perform custom logic when an existing record is opened. | `ON('edit-record', callback);` |
 | `'save-record'` | Fires immediately before a record is saved and after it's been validated. Inside this event it's possible to make last-second updates to records right before the record is saved. You cannot perform asynchronous tasks in this event. Once the callback is finished the record will be saved and the editor will close. If you want to prevent the record from saving, you must use the `validate-record` or `validate-repeatable` events. | `ON('save-record', callback);` |
-| `'cancel-record'` | Fires when a record editing session is cancelled. | `ON('cancel-record', callback);` |
+| `'cancel-record'` | Fires when a record editing session is cancelled, before `unload-record`. | `ON('cancel-record', callback);` |
 | `'validate-record'` | Fires right before the record is saved to check any validations. Custom validations done in this callback will be displayed in the app alongside normal built-in validations. The callback function should contain custom validation logic and usage of `INVALID()` to notify the user with a message of why the record is invalid. This event is similar to `save-record` and `save-repeatable` except it gives you the option to prevent the record from being saved by using the `INVALID()` function. Asynchronous functions like `REQUEST()` are not supported in this event. The callback must perform all validations in a synchronous fashion with `INVALID()`. | `ON('validate-record', callback);` |
 | `'change-geometry'` | Fires when a record's geometry changes. For a new record, this event fires when the device gets a location from the GPS and adds it to the record. Once the record has a location, this event is only fired when the location is manually changed using the 'Set Location' screen. Calling `SETLOCATION(lat, lon);` does not fire a `change-geometry` event. If you need to handle programmatic changes to the location you must explicitly handle it in your code. | `ON('change-geometry', callback);` |
 | `'change-project'` | Fires when a record's project changes. This event does not fire on default values. If you need to handle the project being set when the record is created you can use `new-record`. Setting the project programmatically with `SETPROJECT()` does not fire a `change-project` event. If you need to respond to programmatic changes in the project you must handle it explicitly after `SETPROJECT()` is called. | `ON('change-project', callback);` |
@@ -113,13 +113,13 @@ The callback for field events is passed an event parameter with `name`, `field`,
 | Event | Description | Listener Function Signature |
 |--------|----------|-------------|-------------|
 | `'load-repeatable'` | Fires when a repeatable editor is displayed. | `ON('load-repeatable', 'repeatable_field', callback);` |
-| `'unload-repeatable'` | Acts as the opposite of `load-repeatable` and fires when the repeatable editor is closed. Does not fire when the record is saved. | `ON('unload-repeatable', callback);` |
-| `'new-repeatable'` | Fires when a new repeatable is created, after `'load-repeatable'`. | `ON('new-repeatable', 'repeatable_field', callback);` |
-| `'edit-repeatable'` | Fires when a repeatable is edited, after `'load-repeatable'`. | `ON('edit-repeatable', 'repeatable_field', callback);` |
+| `'unload-repeatable'` | Acts as the opposite of `load-repeatable` and fires when the repeatable editor is closed. Does not fire when the record is saved. | `ON('unload-repeatable', 'repeatable_field', callback);` |
+| `'new-repeatable'` | Fires when a new repeatable is created, after `load-repeatable`. | `ON('new-repeatable', 'repeatable_field', callback);` |
+| `'edit-repeatable'` | Fires when a repeatable is edited, after `load-repeatable`. | `ON('edit-repeatable', 'repeatable_field', callback);` |
 | `'save-repeatable'` | Fires immediately before repeatable is saved, and after it's been validated. | `ON('save-repeatable', 'repeatable_field', callback);` |
-| `'cancel-repeatable'` | Fires when a repeatable editing session is cancelled. | `ON('cancel-repeatable', callback);` |
+| `'cancel-repeatable'` | Fires when a repeatable editing session is cancelled, before `unload-repeatable`. | `ON('cancel-repeatable', 'repeatable_field', callback);` |
 | `'validate-repeatable'` | Fires right before the repeatable is saved to check any validations. | `ON('validate-repeatable', 'repeatable_field', callback);` |
-| `'change-geometry'` | Fires when a repeatable's geometry changes | `ON('change-geometry', 'repeatable_field', callback);` |
+| `'change-geometry'` | Fires when a repeatable's geometry changes. | `ON('change-geometry', 'repeatable_field', callback);` |
 
 ### Example
 
