@@ -279,6 +279,7 @@ Generate custom PDF reports from Fulcrum data. To customize reports, edit `templ
 | `--concurrency` | concurrent reports (between 1 and 10) | false | 5 |
 | `--repeatables` | generate a PDF for each repeatable child record | false | false |
 | `--recurse` | recursively print all child items in each PDF | false | true |
+| `--reports-wkhtmltopdf` | specify the path to the wkhtmltopdf binary | false | na |
 
 ### Install the plugin:
 
@@ -287,6 +288,8 @@ Generate custom PDF reports from Fulcrum data. To customize reports, edit `templ
 | - | - |
 | macOS / Linux  | `fulcrum install-plugin --name reports`  |
 | Windows | `.\fulcrum.cmd install-plugin --name reports` |
+
+_Note: Currently, Windows users will need to install wkhtmltopdf separately from Fulcrum Desktop [https://wkhtmltopdf.org/downloads.html](https://wkhtmltopdf.org/downloads.html) and specify the location of the binary. For example:_ `.\fulcrum.cmd reports --org "Organization Name" --form "Form Name" --reports-wkhtmltopdf "C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe"`
 
 ### Run reports
 
