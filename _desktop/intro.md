@@ -61,13 +61,15 @@ After installing the core command line tools, you should authenticate with your 
 
 ### Setup the local Fulcrum database
 
+_Note: `--org` is now required when running fulcrum setup so that the role can be verified._
+
 {:.table.table-striped.event-table}
 | OS | Command |
 | - | - |
-| macOS / Linux (prompt) | `fulcrum setup` |
-| macOS / Linux  | `fulcrum setup --email 'EMAIL' --password 'SECRET'` |
-| Windows | `.\fulcrum.cmd setup --email "EMAIL" --password "SECRET"` |
-| All | `fulcrum setup --token <token>` |
+| macOS / Linux (prompt) | `fulcrum setup --org 'Organization Name'` |
+| macOS / Linux  | `fulcrum setup --org 'Organization Name' --email 'EMAIL' --password 'SECRET'` |
+| Windows | `.\fulcrum.cmd setup --org "Organization Name" --email "EMAIL" --password "SECRET"` |
+| All | `fulcrum setup --org 'Organization Name' --token '<token>'` |
 
 ### Sync your Organization
 
