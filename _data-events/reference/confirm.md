@@ -23,12 +23,28 @@ CONFIRM displays a message to the user and allows a callback function that will 
 
 ### Examples
 
+Basic example.
+
 ```js
 CONFIRM('Confirm', 'You have selected a critical safety violation. Are you sure?', function (result) {
   if (result.value === 'Okay') {
     // Selected Okay
   } else {
     // Selected Cancel
+  }
+});
+```
+
+Example seen in GIF animation.
+
+```js
+ON('change', 'violations_observed', function(event) {
+  if (CHOICEVALUE($violations_observed) == 'Critical violation(s)') {
+    CONFIRM('Confirm', 'You have selected a critical safety violation. Are you sure?', function(result) {
+      if (result.value === 'Cancel') {
+        SETVALUE('violations_observed', null);
+      }
+    });
   }
 });
 ```
