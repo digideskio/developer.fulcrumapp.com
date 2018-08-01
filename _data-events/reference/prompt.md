@@ -2,7 +2,7 @@
 layout: default
 section: data_events
 title: "PROMPT"
-description: "Display a text field to get input from the user and a callback to respond to the result"
+description: "Display a text field to get input from the user and a callback to respond to the result."
 category: section
 permalink: /data-events/reference/prompt/
 ---
