@@ -2,7 +2,7 @@
 layout: default
 section: data_events
 title: "CONFIRM"
-description: "Display a question to the user with an &#39;Okay or Cancel&#39; response and a callback to respond to the result"
+description: "Display a question to the user with an &#39;Okay or Cancel&#39; response and a callback to respond to the result."
 category: section
 permalink: /data-events/reference/confirm/
 ---
