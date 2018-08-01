@@ -11,6 +11,8 @@ permalink: /data-events/reference/confirm/
 
 CONFIRM displays a message to the user and allows a callback function that will be invoked to respond to the result of the question.
 
+<img src="../media/confirm.gif" alt="CONFIRM() Data Event example" style="float: right; margin-left: 40px;" />
+
 ### Parameters
 
 `title` String (__required__) - A short title for the alert
