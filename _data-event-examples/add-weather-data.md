@@ -11,6 +11,11 @@ tags:
 
 This example assumes you've signed up for an API key from [wunderground.com](https://www.wunderground.com/weather/api) and have a text field in your app (`weather_summary` below) to store the current weather summary.
 
+**NOTE**: Weather Underground API is a paid for service. There are some alternatives below. If you use one of these alternatives, you will likely need to reference their API docs to ensure that the calls are properly configured.
+- [NWS](https://www.weather.gov/documentation/services-web-api) has a free API.
+- [OpenWeatherMap](https://openweathermap.org/api) has an API that is free with a 60 calls per minute limit, and the data is <2 hours old.
+- [Dark Sky](https://darksky.net/dev) has an API that is free with a 1000 calls per day limit.
+
 Here we're listening for the `'change-geometry'` event for a record, and then using the [REQUEST]({{ site.url }}/data-events/reference/request) function to make an API call to wunderground.com. Once we get the response we parse it as JSON and use [SETVALUE]({{ site.url }}/data-events/reference/setvalue) to update the form value.
 
 
