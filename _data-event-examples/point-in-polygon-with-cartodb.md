@@ -45,14 +45,18 @@ function nearestBrewery() {
 	var query = 'SELECT * FROM denver_breweries ORDER BY the_geom <-> ST_Transform(CDB_LatLng(' + LONGITUDE() + ',' + LATITUDE() + '),4326) LIMIT 60';
 
 	var options = {
-    url: 'https://denverstartup.carto.com/api/v2/sql?f=geojson&q=' + encodeURIComponent(query)
+    url: 'https://denverstartup.carto.com/api/v2/sql',
+    qs: {
+      f: 'geojson',
+      q: query
+    }
   };
 
   REQUEST(options, function(error, response, body) {
     if (error) {
       ALERT('Error with request: ' + error);
     } else {
-      data = JSON.parse(body);
+      var data = JSON.parse(body);
       SETVALUE('nearest_brewery', data.rows[0].name);
     }
   });
@@ -65,14 +69,18 @@ function identifyNeighborhood() {
 	var query = "SELECT * FROM denver_neighborhoods WHERE ST_Contains(the_geom, ST_GeomFromText('POINT("+ LONGITUDE() + " " + LATITUDE()+ ")', 4326));"
 
 	var options = {
-    url: 'https://denverstartup.carto.com/api/v2/sql?f=geojson&q=' + encodeURIComponent(query)
+    url: 'https://denverstartup.carto.com/api/v2/sql',
+    qs: {
+      f: 'geojson',
+      q: query
+    }
   };
 
   REQUEST(options, function(error, response, body) {
     if (error) {
       ALERT('Error with request: ' + error);
     } else {
-      data = JSON.parse(body);
+      var data = JSON.parse(body);
       SETVALUE('neighborhood', data.rows[0].nbhd_name);
     }
   });
