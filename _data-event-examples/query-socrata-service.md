@@ -22,10 +22,15 @@ var nearbyNursingHomes; // global variable to hold data returned by query
 ON('change-geometry', function(event) {
 
   // build the url passing our location to the special SoQL `distance_in_meters` spatial function, including a "distance" column in miles
-  var options = {
-    url: "https://data.medicare.gov/resource/b27b-2uc7.json?$order=" + encodeURIComponent("distance_in_meters(location, 'POINT (" + LONGITUDE() + " " + LATITUDE() + ")')") + "&$limit=5&$select=" + encodeURIComponent("*, distance_in_meters(location, 'POINT (" + LONGITUDE() + " " + LATITUDE() + ")') * 0.000621371 AS distance")
+var options = {
+    url: 'https://data.medicare.gov/resource/b27b-2uc7.json',
+    qs: {
+      '$order': "distance_in_meters(location, 'POINT (" + LONGITUDE() + " " + LATITUDE() + ")')",
+      '$limit': 5,
+      '$select': "*, distance_in_meters(location, 'POINT (" + LONGITUDE() + " " + LATITUDE() + ")') * 0.000621371 AS distance"
+    }
   };
-
+  
   // give the user a loading indicator while it's fetching the data from Socrata
   PROGRESS('Searching for nearby Nursing Homes...');
 
