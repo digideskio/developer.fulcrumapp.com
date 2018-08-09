@@ -43,7 +43,12 @@ To work in the web browser, URLs fetched using REQUEST *require* HTTPS & [CORS](
 
 ON('change-geometry', function(event) {
   var options = {
-    url: 'https://nominatim.openstreetmap.org/search/' + LATITUDE() + ',' + LONGITUDE() + '?format=json&polygon=1&addressdetails=1'
+    url: 'https://nominatim.openstreetmap.org/search/' + LATITUDE() + ',' + LONGITUDE(),
+    qs: {
+      format: 'json',
+      polygon: 1,
+      addressdetails: 1
+    }
   };
 
   REQUEST(options, function(error, response, body) {
@@ -51,7 +56,6 @@ ON('change-geometry', function(event) {
       ALERT('Error with request: ' + INSPECT(error));
     } else {
       var data = JSON.parse(body);
-
       if (data.length) {
         SETVALUE('place_name', data[0].display_name);
       }
