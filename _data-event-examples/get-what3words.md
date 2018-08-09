@@ -22,7 +22,11 @@ var w3wApiKey = 'my_api_key';
 
 function getw3w() {
   var options = {
-    url: 'https://api.what3words.com/v2/reverse?key=' + w3wApiKey + '&coords=' + LATITUDE() + ',' + LONGITUDE()
+    url: 'https://api.what3words.com/v2/reverse',
+    qs: {
+      key: w3wApiKey,
+      coords: LATITUDE() + ',' + LONGITUDE()
+    }
   };
 
   PROGRESS('Loading', 'Finding the right words...');
@@ -41,7 +45,11 @@ function getw3w() {
 function setw3w() {
   if ($w3w_address && $w3w_address.split('.') && $w3w_address.split('.').length == 3) {
     options = {
-      url: 'https://api.what3words.com/v2/forward?key=' + w3wApiKey + '&addr=' + $w3w_address
+      url: 'https://api.what3words.com/v2/forward',
+      qs: {
+        key: w3wApiKey,
+        addr: $w3w_address
+      }
     };
 
     PROGRESS('Loading', 'Finding the location...');
