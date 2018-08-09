@@ -15,11 +15,13 @@ Similar to automating weather collection, data events allow you to tap into any 
 
 ``` js
 function getElevation() {
-  var key = 'your_api_key';
-  var mqURL = 'https://open.mapquestapi.com/elevation/v1/profile?key=' + key + '&shapeFormat=raw&latLngCollection=' + LATITUDE() + ',' + LONGITUDE();
-
   var options = {
-    url: mqURL
+    url: 'https://open.mapquestapi.com/elevation/v1/profile',
+    qs: {
+      key: 'your_api_key',
+      shapeFormat: 'raw',
+      latLngCollection: LATITUDE() + ',' + LONGITUDE()
+    }
   };
 
   REQUEST(options, function(error, response, body) {
