@@ -28,17 +28,18 @@ ON('change-geometry', function(event) {
     "</DWithin>" +
   "</Filter>";
 
-  // geoserver URL with encoded filter
-  var geoserverURL = "http://giswebservices.massgis.state.ma.us/geoserver/wfs?request=getfeature&version=1.0.0&service=wfs&typename=massgis:GISDATA.EOTROADS_ARC&propertyname=STREETNAME&outputformat=json&filter=" + encodeURIComponent(filter);
-
-  // use cors/https proxy for web requests
-  if (!ISMOBILE()) {
-    geoserverURL = "https://crossorigin.me/" + geoserverURL;
-  }
-
   // configure request options
   var options = {
-    url: geoserverURL
+    url: 'https://giswebservices.massgis.state.ma.us/geoserver/wfs',
+    qs: {
+      request: 'getfeature',
+      version: '1.0.0',
+      service: 'wfs',
+      typename: 'massgis:GISDATA.EOTROADS_ARC',
+      propertyname: 'STREETNAME',
+      outputformat: 'json',
+      filter: filter
+    }
   };
 
   // give the user a loading indicator while it's fetching the data from GeoServer
