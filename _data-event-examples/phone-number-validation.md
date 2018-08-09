@@ -37,10 +37,12 @@ function b2a(a) {
 
 //verify_with_twilio is a hyperlink field. You may want to consider using regex validation for phone_number in a text field but a numeric field works too.
 ON('click', 'verify_with_twilio', function(event) {
-    url = 'https://lookups.twilio.com/v1/PhoneNumbers/' + $phone_number + '?Type=carrier&Type=caller-name';
-
     var options = {
-        url: url,
+        url: 'https://lookups.twilio.com/v1/PhoneNumbers/' + $phone_number,
+        qs: {
+            'Type': 'carrier',
+            'Type': 'caller-name'
+        },
         headers: {
             'Authorization': 'Basic ' + b2a(accountSid + ':' + authToken)
         }
