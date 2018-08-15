@@ -57,7 +57,7 @@ var choices = {
 
 function translate(e) {
   var language = CHOICEVALUE($language);
-  for (var dataName in DATANAMES()) {
+  DATANAMES().forEach(function(dataName) {
     // Update field labels
     if (labels[dataName]) {
       SETLABEL(dataName, labels[dataName][language]);
@@ -70,7 +70,7 @@ function translate(e) {
     } else {
       SETCHOICES(dataName, null);
     }
-  }
+  });
 }
 
 ON('load-record', translate);
