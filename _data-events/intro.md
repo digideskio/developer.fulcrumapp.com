@@ -13,7 +13,7 @@ menu:
   - "Request Calls": request-calls
 ---
 
-Data Events allow users to perform ​_actions_​ on the mobile device when certain ​_events_​ are triggered. Actions include custom alerts and validation messages, setting field values, choices, labels, descriptions, requirement & visibility settings, HTTP requests and more. Event triggers include record loading, editing, validating, saving, value changing, and more. This enables listening for record changes, programmatically changing values (including status, project, and geometry), as well as building dynamic hyperlinks, writing custom quality assurance logic and much more!
+Data Events allow users to perform ​_actions_​ on the mobile device when certain ​_events_​ are triggered. Actions include custom alerts and validation messages, setting field values, choices, labels, descriptions, requirement & visibility settings, HTTP requests and more. Event triggers include record loading, editing, validating, saving, value changing, and more. This enables listening for record changes, programmatically changing values (including status, project, and geometry), as well as building dynamic hyperlinks, writing custom quality assurance logic and much more! Data Events are written in standard JavaScript with some custom functions for accessing form data and record values.
 
 ## Record Events
 
